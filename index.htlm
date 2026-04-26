@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtisanProspere.ch — Pendant que tu lis ça, un client choisit ton concurrent</title>
+  <meta name="description" content="Pour les artisans en Suisse romande qui veulent des demandes de devis sans dépendre du bouche-à-oreille.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0e0e0e;
+      --white: #fafaf8;
+      --gray-100: #f4f3f0;
+      --gray-200: #e8e6e1;
+      --gray-400: #a8a49c;
+      --gray-600: #6b6760;
+      --accent: #c8421a;
+      --accent-light: #f5ece8;
+      --success: #1a7a4a;
+      --success-light: #e8f5ee;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .fade-up-1 { animation-delay: 0.1s; }
+    .fade-up-2 { animation-delay: 0.25s; }
+    .fade-up-3 { animation-delay: 0.4s; }
+    .fade-up-4 { animation-delay: 0.55s; }
+    .fade-up-5 { animation-delay: 0.7s; }
+
+    /* LAYOUT */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+    .header-cta {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .header-cta:hover { background: var(--accent); color: var(--white); }
+
+    /* HERO */
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease infinite;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--gray-600);
+      max-width: 520px;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    /* VIDEO */
+    .video-wrap {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .video-wrap:hover { border-color: var(--gray-400); }
+    .video-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200,66,26,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .play-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+    .video-wrap:hover .play-btn {
+      transform: scale(1.1);
+      background: var(--accent);
+    }
+    .play-btn svg { margin-left: 4px; }
+
+    .video-text {
+      text-align: center;
+      padding: 0 24px;
+    }
+    .video-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--black);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .video-sub {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    .duration-badge {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      color: var(--gray-600);
+      padding: 4px 12px;
+      font-weight: 500;
+    }
+
+    /* CTA BUTTON */
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 20px 32px;
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 12px;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .cta-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 64px;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 0 0 48px;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .stat {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--black);
+      display: block;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+
+    /* POINTS */
+    .points {
+      list-style: none;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--gray-600);
+    }
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--success-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .points li strong { color: var(--black); font-weight: 500; }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+    .section-sub {
+      font-size: 15px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    /* CALENDLY */
+    .calendly-section { margin-bottom: 64px; }
+    .calendly-inline-widget {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 32px 0;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--accent); }
+    footer p {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .hero { padding: 48px 0 40px; }
+      h1 { font-size: 32px; }
+      .hero-sub { font-size: 16px; }
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat { padding: 14px 10px; }
+      .stat-num { font-size: 20px; }
+      .header-cta { display: none; }
+      .btn-primary { font-size: 16px; padding: 18px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <a class="logo" href="#">Artisan<span>Prospere</span>.ch</a>
+      <a class="header-cta" href="#calendly">Réserver mon audit</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+
+      <div class="badge fade-up fade-up-1">Suisse romande · Artisans</div>
+
+      <h1 class="fade-up fade-up-2">
+        Pendant que tu lis ça,<br>
+        un client choisit <em>ton concurrent</em>
+      </h1>
+
+      <p class="hero-sub fade-up fade-up-3">
+        Pour les artisans en Suisse romande qui veulent des demandes de devis sans dépendre du bouche-à-oreille.
+      </p>
+
+      <!-- VIDEO -->
+      <div class="video-wrap fade-up fade-up-4" onclick="document.getElementById('calendly').scrollIntoView({behavior:'smooth'})">
+        <div class="play-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <polygon points="6,4 21,12 6,20" fill="#fafaf8"/>
+          </svg>
+        </div>
+        <div class="video-text">
+          <p class="video-title">7 minutes pour comprendre pourquoi ton concurrent est appelé avant toi — et ce qu'on peut faire</p>
+          <p class="video-sub">Analyse en direct d'un vrai site d'artisan en Suisse romande</p>
+        </div>
+        <span class="duration-badge">7 min</span>
+      </div>
+
+      <a class="btn-primary fade-up fade-up-5" href="#calendly">→ Réserver mon audit gratuit</a>
+      <p class="cta-note fade-up fade-up-5">30 minutes · Gratuit · Sans engagement</p>
+
+      <hr class="divider">
+
+      <!-- STATS -->
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">7j</span>
+          <span class="stat-label">Délai de livraison</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">9/10</span>
+          <span class="stat-label">Sites d'artisans ne convertissent pas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">0 CHF</span>
+          <span class="stat-label">Pour l'audit, même sans suite</span>
+        </div>
+      </div>
+
+      <!-- POINTS -->
+      <ul class="points">
+        <li>
+          <span class="check">
+            <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span><strong>Site optimisé vitesse, mobile et SEO technique</strong> — livré clé en main, tu fournis tes photos</span>
+        </li>
+        <li>
+          <span class="check">
+            <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span><strong>Formulaire de devis intelligent</strong> — fini les allers-retours pour avoir les infos de base</span>
+        </li>
+        <li>
+          <span class="check">
+            <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span><strong>Fiche Google créée et optimisée</strong> — pour exister quand on te cherche dans ta ville</span>
+        </li>
+        <li>
+          <span class="check">
+            <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span><strong>Livraison en 7 à 10 jours chrono</strong> — tu fournis tes photos, je m'occupe du reste</span>
+        </li>
+      </ul>
+
+      <hr class="divider">
+
+      <!-- CALENDLY -->
+      <div class="calendly-section" id="calendly">
+        <p class="section-title">Réserve ton audit gratuit</p>
+        <p class="section-sub">Choisis un créneau — 30 min, sans engagement. Tu repars avec un audit concret même si on ne travaille pas ensemble.</p>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/lesambitieuxacomplis/artisanprospere" style="min-width:280px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-logo">Artisan<span>Prospere</span>.ch</p>
+      <p>Création de sites pour artisans en Suisse romande</p>
+    </div>
+  </footer>
+
+</body>
+</html>
