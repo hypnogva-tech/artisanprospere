@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
   <meta name="description" content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.">
+
+  <!-- Google Fonts en non-bloquant -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"></noscript>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,7 +33,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', system-ui, sans-serif;
       background: var(--white);
       color: var(--black);
       font-size: 17px;
@@ -58,7 +62,7 @@
     header { padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
     header .container { display: flex; align-items: center; justify-content: space-between; }
 
-    .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; letter-spacing: -0.02em; }
+    .logo { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; letter-spacing: -0.02em; }
     .logo span { color: var(--accent); }
 
     .header-cta { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; border: 1.5px solid var(--accent); padding: 8px 18px; border-radius: 999px; transition: background 0.2s, color 0.2s; }
@@ -69,18 +73,20 @@
     .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 6px 16px; border-radius: 999px; margin-bottom: 28px; }
     .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease infinite; }
 
-    h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(30px, 5.5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--black); text-align: center; }
+    h1 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 5.5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--black); text-align: center; }
     h1 em { font-style: normal; color: var(--accent); }
 
     .hero-sub { font-size: 17px; line-height: 1.6; color: var(--gray-600); max-width: 520px; margin: 0 auto 32px; font-weight: 300; text-align: center; }
-
-    .sound-note { text-align: center; font-size: 14px; color: var(--black); font-weight: 500; margin-bottom: 10px; }
 
     .video-wrap { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; }
     .wistia_responsive_padding { padding: 56.25% 0 0 0; position: relative; }
     .wistia_responsive_wrapper { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
 
-    .btn-primary { display: block; width: 100%; padding: 20px 32px; font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); background: var(--black); border: none; border-radius: var(--radius); cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-bottom: 12px; }
+    .video-placeholder { background: #111; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 12px; }
+    .play-circle { width: 72px; height: 72px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; transition: transform 0.2s; }
+    .video-placeholder:hover .play-circle { transform: scale(1.1); }
+
+    .btn-primary { display: block; width: 100%; padding: 20px 32px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); background: var(--black); border: none; border-radius: var(--radius); cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-bottom: 12px; }
     .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
     .btn-primary:active { transform: translateY(0); }
 
@@ -90,7 +96,7 @@
 
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 48px; }
     .stat { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 16px; text-align: center; }
-    .stat-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: var(--black); display: block; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .stat-num { font-family: 'Montserrat', system-ui, sans-serif; font-size: 26px; font-weight: 800; color: var(--black); display: block; letter-spacing: -0.03em; margin-bottom: 4px; }
     .stat-label { font-size: 12px; color: var(--gray-600); line-height: 1.4; }
 
     .points { list-style: none; margin-bottom: 48px; display: flex; flex-direction: column; gap: 14px; }
@@ -98,14 +104,14 @@
     .check { width: 22px; height: 22px; border-radius: 50%; background: var(--success-light); flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
     .points li strong { color: var(--black); font-weight: 500; }
 
-    .section-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); }
+    .section-title { font-family: 'Montserrat', system-ui, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); }
     .section-sub { font-size: 15px; color: var(--gray-600); margin-bottom: 32px; font-weight: 300; }
 
     .calendly-section { margin-bottom: 64px; }
     .calendly-inline-widget { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200); }
 
     footer { border-top: 1px solid var(--gray-200); padding: 32px 0; text-align: center; }
-    .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 16px; color: var(--black); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .footer-logo { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--black); letter-spacing: -0.02em; margin-bottom: 8px; }
     .footer-logo span { color: var(--accent); }
     footer p { font-size: 13px; color: var(--gray-400); }
 
@@ -130,7 +136,7 @@ fbq('init','1496766415024234');fbq('track','PageView');
 
 <body>
 
-  <a href="https://wa.me/41783206610" target="_blank" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:999;text-decoration:none;">
+  <a href="https://wa.me/4178320661" target="_blank" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:999;text-decoration:none;">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.527a.75.75 0 00.916.916l5.663-1.475A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.95-1.355l-.355-.211-3.683.957.983-3.585-.231-.369A9.721 9.721 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
   </a>
 
@@ -148,9 +154,8 @@ fbq('init','1496766415024234');fbq('track','PageView');
 
       <h1 class="fade-up fade-up-2">
         Comment facturer<br>
-        1 à 2 clients<br>
-        de plus chaque semaine<br>
-        grâce à ton site<br>
+        1 à 2 clients de plus<br>
+        chaque semaine grâce à ton site<br>
         <em style="font-size:0.65em;">de manière régulière, prévisible<br>et sans prospecter</em>
       </h1>
 
@@ -158,31 +163,22 @@ fbq('init','1496766415024234');fbq('track','PageView');
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <p class="sound-note fade-up fade-up-3">🔊 Clique sur la vidéo pour activer le son pour regarder la vidéo</p>
-
-   <div class="video-wrap fade-up fade-up-4" id="video-container">
-  <div class="wistia_responsive_padding">
-    <div class="wistia_responsive_wrapper">
-      <div id="wistia-placeholder" onclick="loadWistia()" style="background:#111;width:100%;height:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:12px;">
-        <div style="text-align:center;color:white;">
-          <div style="width:72px;height:72px;background:#c8421a;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-            <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="6,4 21,12 6,20" fill="white"/></svg>
+      <!-- VIDEO — lazy load -->
+      <div class="video-wrap fade-up fade-up-4">
+        <div class="wistia_responsive_padding">
+          <div class="wistia_responsive_wrapper">
+            <div class="video-placeholder" onclick="loadWistia()">
+              <div style="text-align:center;color:white;">
+                <div class="play-circle">
+                  <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="6,4 21,12 6,20" fill="white"/></svg>
+                </div>
+                <p style="font-size:15px;font-weight:600;">▶ Regarder la vidéo</p>
+                <p style="font-size:12px;opacity:0.6;margin-top:4px;">7 minutes · Active le son</p>
+              </div>
+            </div>
           </div>
-          <p style="font-size:14px;font-weight:600;">▶ Regarder la vidéo</p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<script>
-function loadWistia() {
-  document.getElementById('wistia-placeholder').innerHTML = '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true&autoPlay=true" title="VSL" allow="autoplay; fullscreen" frameborder="0" width="100%" height="100%"></iframe>';
-  var s = document.createElement('script');
-  s.src = 'https://fast.wistia.net/player.js';
-  document.head.appendChild(s);
-}
-</script>
 
       <a class="btn-primary fade-up fade-up-5" href="#calendly">→ Réserver mon audit gratuit</a>
       <p class="cta-note fade-up fade-up-5">30 minutes · Gratuit · Sans engagement</p>
@@ -241,6 +237,29 @@ function loadWistia() {
       <p>Création de sites pour artisans en Suisse romande</p>
     </div>
   </footer>
+
+  <script>
+    function loadWistia() {
+      var wrapper = document.querySelector('.wistia_responsive_wrapper');
+      wrapper.innerHTML = '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true&autoPlay=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;"></iframe>';
+      var s = document.createElement('script');
+      s.src = 'https://fast.wistia.net/player.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
+    // Lazy load Calendly seulement quand on scrolle vers le bas
+    var calendlyLoaded = false;
+    window.addEventListener('scroll', function() {
+      if (!calendlyLoaded && window.scrollY > 400) {
+        calendlyLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://assets.calendly.com/assets/external/widget.js';
+        s.async = true;
+        document.head.appendChild(s);
+      }
+    });
+  </script>
 
 </body>
 </html>
