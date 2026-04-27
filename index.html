@@ -45,12 +45,69 @@
     h1 em { font-style: normal; color: var(--accent); }
     .hero-sub { font-size: 17px; line-height: 1.6; color: var(--gray-600); max-width: 520px; margin: 0 auto 32px; font-weight: 300; text-align: center; }
 
-    .video-wrap { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; }
-    .wistia_responsive_padding { padding: 56.25% 0 0 0; position: relative; }
-    .wistia_responsive_wrapper { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
-    .video-placeholder { background: #111; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-    .play-circle { width: 72px; height: 72px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; transition: transform 0.2s; }
-    .video-placeholder:hover .play-circle { transform: scale(1.1); }
+    /* VIDEO */
+    .video-wrap { margin-bottom: 32px; }
+
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      background: #111;
+    }
+    .video-thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease, opacity 0.3s ease;
+    }
+    .video-thumb:hover img { transform: scale(1.03); opacity: 0.82; }
+    .video-thumb .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(0,0,0,0.22);
+      transition: background 0.2s;
+    }
+    .video-thumb:hover .play-btn { background: rgba(0,0,0,0.35); }
+    .play-circle {
+      width: 72px;
+      height: 72px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(200,66,26,0.5);
+      transition: transform 0.2s;
+    }
+    .video-thumb:hover .play-circle { transform: scale(1.1); }
+    .play-label { color: white; font-size: 15px; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+    .play-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin-top: -4px; }
+
+    .video-iframe-wrap {
+      display: none;
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .video-iframe-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
 
     .btn-primary { display: block; width: 100%; padding: 20px 32px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); background: var(--black); border: none; border-radius: var(--radius); cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-bottom: 12px; }
     .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
@@ -96,6 +153,7 @@
       .btn-primary { font-size: 16px; padding: 18px 24px; }
       .booking-section { padding: 32px 20px; }
       .btn-calendly { padding: 18px 32px; font-size: 15px; }
+      .play-circle { width: 58px; height: 58px; }
     }
   </style>
 </head>
@@ -135,21 +193,29 @@ fbq('init','1496766415024234');fbq('track','PageView');
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO lazy load -->
+      <!-- VIDEO avec thumbnail -->
       <div class="video-wrap fade-up fade-up-4">
-        <div class="wistia_responsive_padding">
-          <div class="wistia_responsive_wrapper">
-            <div class="video-placeholder" onclick="loadWistia()">
-              <div style="text-align:center;color:white;">
-                <div class="play-circle">
-                  <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="6,4 21,12 6,20" fill="white"/></svg>
-                </div>
-                <p style="font-size:15px;font-weight:600;">▶ Regarder la vidéo</p>
-                <p style="font-size:12px;opacity:0.6;margin-top:4px;">7 minutes · Active le son</p>
-              </div>
+
+        <!-- Thumbnail cliquable -->
+        <div class="video-thumb" id="videoThumb" onclick="playVideo()">
+          <img
+            src="https://embed-ssl.wistia.com/deliveries/j4hsy8feq9.jpg?image_crop_resized=1280x720"
+            onerror="this.style.display='none'"
+            alt="Regarder la vidéo ArtisanProspere"
+            loading="lazy"
+          />
+          <div class="play-btn">
+            <div class="play-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
             </div>
+            <span class="play-label">▶ Regarder la vidéo</span>
+            <span class="play-sub">7 minutes · Active le son</span>
           </div>
         </div>
+
+        <!-- Iframe injectée au clic -->
+        <div class="video-iframe-wrap" id="videoIframe"></div>
+
       </div>
 
       <a class="btn-primary fade-up fade-up-5" href="https://calendly.com/lesambitieuxacomplis/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
@@ -193,7 +259,6 @@ fbq('init','1496766415024234');fbq('track','PageView');
 
       <hr class="divider">
 
-      <!-- BOOKING SECTION -->
       <div class="booking-section" id="calendly">
         <p class="section-title">Réserve ton audit gratuit</p>
         <p class="section-sub">30 minutes pour analyser ton site ensemble. Tu repars avec un audit concret même si on ne travaille pas ensemble.</p>
@@ -217,13 +282,20 @@ fbq('init','1496766415024234');fbq('track','PageView');
   </footer>
 
   <script>
-    function loadWistia() {
-      var wrapper = document.querySelector('.wistia_responsive_wrapper');
-      wrapper.innerHTML = '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true&autoPlay=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;"></iframe>';
-      var s = document.createElement('script');
-      s.src = 'https://fast.wistia.net/player.js';
-      s.async = true;
-      document.head.appendChild(s);
+    function playVideo() {
+      document.getElementById('videoThumb').style.display = 'none';
+      var wrap = document.getElementById('videoIframe');
+      wrap.style.display = 'block';
+      wrap.innerHTML =
+        '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?autoPlay=1&muted=0&seo=true" ' +
+        'title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" ' +
+        'frameborder="0" scrolling="no" width="100%" height="100%"></iframe>';
+      if (!document.querySelector('script[src*="wistia"]')) {
+        var s = document.createElement('script');
+        s.src = 'https://fast.wistia.net/player.js';
+        s.async = true;
+        document.head.appendChild(s);
+      }
     }
   </script>
 
