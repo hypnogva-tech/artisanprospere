@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rendez-vous confirmé — ArtisanProspere.ch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0e0e0e;
+      --white: #fafaf8;
+      --gray-100: #f4f3f0;
+      --gray-200: #e8e6e1;
+      --gray-400: #a8a49c;
+      --gray-600: #6b6760;
+      --accent: #c8421a;
+      --success: #1a7a4a;
+      --success-light: #e8f5ee;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes checkPop {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--gray-200);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--accent); }
+
+    main {
+      flex: 1;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      text-align: center;
+    }
+
+    .check-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--success-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      animation: checkPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      animation-delay: 0.2s;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.35s;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .intro {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      font-weight: 300;
+      margin-bottom: 48px;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.45s;
+    }
+
+    .steps {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.55s;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-content {}
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    .step-desc strong {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .reminder-box {
+      background: var(--black);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 48px;
+      text-align: left;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.65s;
+    }
+
+    .reminder-box p {
+      font-size: 14px;
+      color: rgba(250,250,248,0.7);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .reminder-box strong {
+      color: var(--white);
+      font-weight: 600;
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .whapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.75s;
+    }
+
+    .whapp-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .whapp-note {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-top: 12px;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.8s;
+    }
+
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="/">Artisan<span>Prospere</span>.ch</a>
+  </header>
+
+  <main>
+
+    <div class="check-wrap">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <polyline points="7,18 15,26 29,10" stroke="#1a7a4a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>Ton audit est <em>confirmé.</em><br>On se parle bientôt.</h1>
+
+    <p class="intro">Tu vas recevoir un email de confirmation avec le lien de l'appel vidéo. En attendant, voilà comment tirer le maximum de nos 30 minutes ensemble.</p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p class="step-title">Note l'adresse de ton site</p>
+          <p class="step-desc">Si t'as déjà un site, garde l'URL sous la main. <strong>Je vais l'analyser en direct pendant l'appel</strong> — vitesse, mobile, SEO, fiche Google. T'as rien à préparer, juste l'adresse.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p class="step-title">Pense à 2-3 types de clients que tu veux attirer</p>
+          <p class="step-desc">Quel genre de travaux tu préfères faire ? Quelle zone géographique ? Quel type de client — particulier, entreprise, promoteur ? <strong>Plus t'es précis, plus ton site sera efficace.</strong></p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <p class="step-title">Prépare 5 minutes de liberté</p>
+          <p class="step-desc">L'appel dure 30 minutes. <strong>Trouve un endroit calme</strong>, pas sur un chantier entre deux coups de perceuse. C'est 30 minutes qui peuvent changer comment ton téléphone sonne chaque semaine.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reminder-box">
+      <strong>📅 Un rappel automatique t'a été envoyé</strong>
+      <p>Tu recevras un rappel 24h avant et 1h avant l'appel. Si tu dois annuler ou déplacer, utilise le lien dans l'email de confirmation — pas de souci.</p>
+    </div>
+
+    <a class="whapp-btn" href="https://wa.me/4178320661" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.527a.75.75 0 00.916.916l5.663-1.475A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.95-1.355l-.355-.211-3.683.957.983-3.585-.231-.369A9.721 9.721 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Une question ? Écris-moi sur WhatsApp
+    </a>
+    <p class="whapp-note">Sam répond en général dans la journée</p>
+
+  </main>
+
+  <footer>
+    ArtisanProspere.ch · Création de sites pour artisans en Suisse romande
+  </footer>
+
+</body>
+</html>
