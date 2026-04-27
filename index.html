@@ -5,98 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
   <meta name="description" content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.">
-
-  <!-- Google Fonts en non-bloquant -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"></noscript>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #0e0e0e;
-      --white: #fafaf8;
-      --gray-100: #f4f3f0;
-      --gray-200: #e8e6e1;
-      --gray-400: #a8a49c;
-      --gray-600: #6b6760;
-      --accent: #c8421a;
-      --accent-light: #f5ece8;
-      --success: #1a7a4a;
-      --success-light: #e8f5ee;
-      --radius: 12px;
-      --radius-sm: 8px;
+      --black: #0e0e0e; --white: #fafaf8; --gray-100: #f4f3f0;
+      --gray-200: #e8e6e1; --gray-400: #a8a49c; --gray-600: #6b6760;
+      --accent: #c8421a; --accent-light: #f5ece8;
+      --success: #1a7a4a; --success-light: #e8f5ee;
+      --radius: 12px; --radius-sm: 8px;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', system-ui, sans-serif; background: var(--white); color: var(--black); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-    body {
-      font-family: 'Montserrat', system-ui, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      font-size: 17px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.06); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 
     .fade-up { animation: fadeUp 0.7s ease both; }
-    .fade-up-1 { animation-delay: 0.1s; }
-    .fade-up-2 { animation-delay: 0.25s; }
-    .fade-up-3 { animation-delay: 0.4s; }
-    .fade-up-4 { animation-delay: 0.55s; }
+    .fade-up-1 { animation-delay: 0.1s; } .fade-up-2 { animation-delay: 0.25s; }
+    .fade-up-3 { animation-delay: 0.4s; } .fade-up-4 { animation-delay: 0.55s; }
     .fade-up-5 { animation-delay: 0.7s; }
 
     .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
     header { padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
     header .container { display: flex; align-items: center; justify-content: space-between; }
-
-    .logo { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; letter-spacing: -0.02em; }
+    .logo { font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; letter-spacing: -0.02em; }
     .logo span { color: var(--accent); }
-
     .header-cta { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; border: 1.5px solid var(--accent); padding: 8px 18px; border-radius: 999px; transition: background 0.2s, color 0.2s; }
     .header-cta:hover { background: var(--accent); color: var(--white); }
 
     .hero { padding: 72px 0 56px; }
-
     .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 6px 16px; border-radius: 999px; margin-bottom: 28px; }
     .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease infinite; }
 
-    h1 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 5.5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--black); text-align: center; }
+    h1 { font-weight: 800; font-size: clamp(30px, 5.5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--black); text-align: center; }
     h1 em { font-style: normal; color: var(--accent); }
-
     .hero-sub { font-size: 17px; line-height: 1.6; color: var(--gray-600); max-width: 520px; margin: 0 auto 32px; font-weight: 300; text-align: center; }
 
     .video-wrap { margin-bottom: 32px; border-radius: var(--radius); overflow: hidden; }
     .wistia_responsive_padding { padding: 56.25% 0 0 0; position: relative; }
     .wistia_responsive_wrapper { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
-
-    .video-placeholder { background: #111; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 12px; }
+    .video-placeholder { background: #111; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
     .play-circle { width: 72px; height: 72px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; transition: transform 0.2s; }
     .video-placeholder:hover .play-circle { transform: scale(1.1); }
 
     .btn-primary { display: block; width: 100%; padding: 20px 32px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); background: var(--black); border: none; border-radius: var(--radius); cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-bottom: 12px; }
     .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
     .btn-primary:active { transform: translateY(0); }
-
     .cta-note { text-align: center; font-size: 13px; color: var(--gray-400); margin-bottom: 48px; }
 
     .divider { border: none; border-top: 1px solid var(--gray-200); margin: 0 0 48px; }
 
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 48px; }
     .stat { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 16px; text-align: center; }
-    .stat-num { font-family: 'Montserrat', system-ui, sans-serif; font-size: 26px; font-weight: 800; color: var(--black); display: block; letter-spacing: -0.03em; margin-bottom: 4px; }
+    .stat-num { font-size: 26px; font-weight: 800; color: var(--black); display: block; letter-spacing: -0.03em; margin-bottom: 4px; }
     .stat-label { font-size: 12px; color: var(--gray-600); line-height: 1.4; }
 
     .points { list-style: none; margin-bottom: 48px; display: flex; flex-direction: column; gap: 14px; }
@@ -104,14 +69,19 @@
     .check { width: 22px; height: 22px; border-radius: 50%; background: var(--success-light); flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
     .points li strong { color: var(--black); font-weight: 500; }
 
-    .section-title { font-family: 'Montserrat', system-ui, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); }
-    .section-sub { font-size: 15px; color: var(--gray-600); margin-bottom: 32px; font-weight: 300; }
+    .booking-section { margin-bottom: 64px; text-align: center; background: var(--gray-100); border-radius: var(--radius); padding: 48px 32px; }
+    .section-title { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); }
+    .section-sub { font-size: 15px; color: var(--gray-600); margin-bottom: 32px; font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto; }
 
-    .calendly-section { margin-bottom: 64px; }
-    .calendly-inline-widget { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200); }
+    .booking-features { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+    .booking-feature { font-size: 13px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; }
+    .booking-feature::before { content: '✓'; color: var(--success); font-weight: 700; }
+
+    .btn-calendly { display: inline-block; padding: 20px 48px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; color: var(--white); background: var(--accent); border-radius: var(--radius); text-decoration: none; transition: opacity 0.2s, transform 0.15s; }
+    .btn-calendly:hover { opacity: 0.88; transform: translateY(-2px); }
 
     footer { border-top: 1px solid var(--gray-200); padding: 32px 0; text-align: center; }
-    .footer-logo { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 800; font-size: 16px; color: var(--black); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .footer-logo { font-weight: 800; font-size: 16px; color: var(--black); letter-spacing: -0.02em; margin-bottom: 8px; }
     .footer-logo span { color: var(--accent); }
     footer p { font-size: 13px; color: var(--gray-400); }
 
@@ -124,6 +94,8 @@
       .stat-num { font-size: 20px; }
       .header-cta { display: none; }
       .btn-primary { font-size: 16px; padding: 18px 24px; }
+      .booking-section { padding: 32px 20px; }
+      .btn-calendly { padding: 18px 32px; font-size: 15px; }
     }
   </style>
 </head>
@@ -143,7 +115,7 @@ fbq('init','1496766415024234');fbq('track','PageView');
   <header>
     <div class="container">
       <a class="logo" href="#">Artisan<span>Prospere</span>.ch</a>
-      <a class="header-cta" href="#calendly">Réserver mon audit</a>
+      <a class="header-cta" href="https://calendly.com/lesambitieuxacomplis/artisanprospere" target="_blank">Réserver mon audit</a>
     </div>
   </header>
 
@@ -163,7 +135,7 @@ fbq('init','1496766415024234');fbq('track','PageView');
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO — lazy load -->
+      <!-- VIDEO lazy load -->
       <div class="video-wrap fade-up fade-up-4">
         <div class="wistia_responsive_padding">
           <div class="wistia_responsive_wrapper">
@@ -180,7 +152,7 @@ fbq('init','1496766415024234');fbq('track','PageView');
         </div>
       </div>
 
-      <a class="btn-primary fade-up fade-up-5" href="#calendly">→ Réserver mon audit gratuit</a>
+      <a class="btn-primary fade-up fade-up-5" href="https://calendly.com/lesambitieuxacomplis/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
       <p class="cta-note fade-up fade-up-5">30 minutes · Gratuit · Sans engagement</p>
 
       <hr class="divider">
@@ -221,11 +193,17 @@ fbq('init','1496766415024234');fbq('track','PageView');
 
       <hr class="divider">
 
-      <div class="calendly-section" id="calendly">
+      <!-- BOOKING SECTION -->
+      <div class="booking-section" id="calendly">
         <p class="section-title">Réserve ton audit gratuit</p>
-        <p class="section-sub">Choisis un créneau — 30 min, sans engagement. Tu repars avec un audit concret même si on ne travaille pas ensemble.</p>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/lesambitieuxacomplis/artisanprospere" style="min-width:280px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <p class="section-sub">30 minutes pour analyser ton site ensemble. Tu repars avec un audit concret même si on ne travaille pas ensemble.</p>
+        <div class="booking-features">
+          <span class="booking-feature">Gratuit</span>
+          <span class="booking-feature">Sans engagement</span>
+          <span class="booking-feature">En visio</span>
+          <span class="booking-feature">30 minutes</span>
+        </div>
+        <a class="btn-calendly" href="https://calendly.com/lesambitieuxacomplis/artisanprospere" target="_blank">→ Choisir mon créneau</a>
       </div>
 
     </div>
@@ -247,18 +225,6 @@ fbq('init','1496766415024234');fbq('track','PageView');
       s.async = true;
       document.head.appendChild(s);
     }
-
-    // Lazy load Calendly seulement quand on scrolle vers le bas
-    var calendlyLoaded = false;
-    window.addEventListener('scroll', function() {
-      if (!calendlyLoaded && window.scrollY > 400) {
-        calendlyLoaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://assets.calendly.com/assets/external/widget.js';
-        s.async = true;
-        document.head.appendChild(s);
-      }
-    });
   </script>
 
 </body>
