@@ -188,17 +188,9 @@
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO : Wistia chargé silencieusement, thumbnail par-dessus -->
-      <div class="video-wrap fade-up fade-up-4" style="position:relative;border-radius:12px;overflow:hidden;">
+      <!-- VIDEO : thumbnail + iframe lazy au clic -->
+      <div class="video-wrap fade-up fade-up-4" style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;">
 
-        <!-- Player Wistia caché derrière la thumbnail -->
-        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-          <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-            <div class="wistia_embed wistia_async_j4hsy8feq9 videoFoam=true doNotTrack=false" style="height:100%;position:relative;width:100%;"></div>
-          </div>
-        </div>
-
-        <!-- Thumbnail par-dessus -->
         <div id="videoOverlay" onclick="startVideo()" style="position:absolute;inset:0;cursor:pointer;background-image:url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');background-size:cover;background-position:center;">
           <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
             <div style="width:72px;height:72px;background:#c8421a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(200,66,26,0.5);">
@@ -209,24 +201,16 @@
           </div>
         </div>
 
+        <div id="videoPlayer" style="position:absolute;inset:0;display:none;"></div>
+
       </div>
 
-      <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
       <script>
-        window._wq = window._wq || [];
-        _wq.push({ id: 'j4hsy8feq9', onReady: function(video) {
-          window._wistiaVideo = video;
-          video.mute(); // silencieux au chargement
-        }});
-
         function startVideo() {
           document.getElementById('videoOverlay').style.display = 'none';
-          // Appel direct dans le clic = son autorisé
-          if (window._wistiaVideo) {
-            window._wistiaVideo.unmute();
-            window._wistiaVideo.volume(1);
-            window._wistiaVideo.play();
-          }
+          var p = document.getElementById('videoPlayer');
+          p.style.display = 'block';
+          p.innerHTML = '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?autoPlay=1&seo=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;height:100%;"></iframe>';
         }
       </script>
 
