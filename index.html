@@ -211,7 +211,24 @@
           document.getElementById('videoOverlay').style.display = 'none';
           var p = document.getElementById('videoPlayer');
           p.style.display = 'block';
-          p.innerHTML = '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?seo=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;height:100%;"></iframe>';
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://fast.wistia.net/embed/iframe/j4hsy8feq9?seo=true';
+          iframe.title = 'VSL ArtisanProspere';
+          iframe.allow = 'autoplay; fullscreen';
+          iframe.allowTransparency = true;
+          iframe.frameBorder = '0';
+          iframe.scrolling = 'no';
+          iframe.style.cssText = 'width:100%;height:100%;';
+          iframe.onload = function() {
+            // Cliquer automatiquement le bouton play Wistia dans l'iframe
+            setTimeout(function() {
+              try {
+                var btn = iframe.contentDocument.querySelector('.w-big-play-button, [data-handle="bigPlayButton"], .wistia_click_to_play');
+                if (btn) btn.click();
+              } catch(e) {}
+            }, 600);
+          };
+          p.appendChild(iframe);
         }
       </script>
 
