@@ -153,15 +153,21 @@
 
     /* VIDEO */
     .video-wrap {
-     <div class="fade-up fade-up-4" style="margin-bottom: 32px;">
-  <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-    <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-      <iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true" title="0427 Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe>
-    </div>
-  </div>
-</div>
-<script src="https://fast.wistia.net/player.js" async></script>
-
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
     .play-btn {
       width: 72px;
       height: 72px;
