@@ -188,53 +188,45 @@
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO : thumbnail, Wistia inline embed chargé au clic -->
+      <!-- VIDEO : Wistia chargé silencieusement, thumbnail par-dessus -->
       <div class="video-wrap fade-up fade-up-4" style="position:relative;border-radius:12px;overflow:hidden;">
 
-        <!-- Thumbnail -->
-        <div id="videoOverlay" onclick="startVideo()" style="position:relative;padding-top:56.25%;cursor:pointer;">
-          <div style="position:absolute;inset:0;background-image:url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');background-size:cover;background-position:center;">
-            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-              <div style="width:72px;height:72px;background:#c8421a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(200,66,26,0.5);">
-                <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
-              </div>
-              <span style="color:white;font-size:15px;font-weight:600;font-family:'Montserrat',sans-serif;">▶ Regarder la vidéo</span>
-              <span style="color:rgba(255,255,255,0.7);font-size:12px;font-family:'Montserrat',sans-serif;">7 minutes · Active le son</span>
-            </div>
+        <!-- Player Wistia caché derrière la thumbnail -->
+        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+          <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+            <div class="wistia_embed wistia_async_j4hsy8feq9 videoFoam=true doNotTrack=false" style="height:100%;position:relative;width:100%;"></div>
           </div>
         </div>
 
-        <!-- Player Wistia inline (injecté au clic) -->
-        <div id="videoPlayer" style="display:none;">
-          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
-            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-              <div id="wistiaEmbed" style="height:100%;position:relative;width:100%;"></div>
+        <!-- Thumbnail par-dessus -->
+        <div id="videoOverlay" onclick="startVideo()" style="position:absolute;inset:0;cursor:pointer;background-image:url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');background-size:cover;background-position:center;">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
+            <div style="width:72px;height:72px;background:#c8421a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(200,66,26,0.5);">
+              <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
             </div>
+            <span style="color:white;font-size:15px;font-weight:600;font-family:'Montserrat',sans-serif;">▶ Regarder la vidéo</span>
+            <span style="color:rgba(255,255,255,0.7);font-size:12px;font-family:'Montserrat',sans-serif;">7 minutes · Active le son</span>
           </div>
         </div>
 
       </div>
 
+      <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
       <script>
+        window._wq = window._wq || [];
+        _wq.push({ id: 'j4hsy8feq9', onReady: function(video) {
+          window._wistiaVideo = video;
+          video.mute(); // silencieux au chargement
+        }});
+
         function startVideo() {
           document.getElementById('videoOverlay').style.display = 'none';
-          document.getElementById('videoPlayer').style.display = 'block';
-
-          // Charger le script Wistia
-          var s = document.createElement('script');
-          s.src = 'https://fast.wistia.net/assets/external/E-v1.js';
-          document.head.appendChild(s);
-
-          // Mettre le div embed avec l'ID Wistia
-          document.getElementById('wistiaEmbed').className = 'wistia_embed wistia_async_j4hsy8feq9 videoFoam=true';
-
-          // Dès que Wistia est prêt, jouer avec le son — dans la chaîne du clic
-          window._wq = window._wq || [];
-          _wq.push({ id: 'j4hsy8feq9', onReady: function(video) {
-            video.unmute();
-            video.volume(1);
-            video.play();
-          }});
+          // Appel direct dans le clic = son autorisé
+          if (window._wistiaVideo) {
+            window._wistiaVideo.unmute();
+            window._wistiaVideo.volume(1);
+            window._wistiaVideo.play();
+          }
         }
       </script>
 
