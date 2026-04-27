@@ -193,30 +193,21 @@ fbq('init','1496766415024234');fbq('track','PageView');
         Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO avec thumbnail -->
+      <!-- VIDEO Wistia natif (thumbnail + son gérés par Wistia) -->
       <div class="video-wrap fade-up fade-up-4">
-
-        <!-- Thumbnail cliquable -->
-        <div class="video-thumb" id="videoThumb" onclick="playVideo()">
-          <img
-            src="https://embed-ssl.wistia.com/deliveries/j4hsy8feq9.jpg?image_crop_resized=1280x720"
-            onerror="this.style.display='none'"
-            alt="Regarder la vidéo ArtisanProspere"
-            loading="lazy"
-          />
-          <div class="play-btn">
-            <div class="play-circle">
-              <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
-            </div>
-            <span class="play-label">▶ Regarder la vidéo</span>
-            <span class="play-sub">7 minutes · Active le son</span>
-          </div>
+        <div style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;">
+          <iframe
+            src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?seo=true"
+            title="VSL ArtisanProspere"
+            allow="autoplay; fullscreen"
+            allowtransparency="true"
+            frameborder="0"
+            scrolling="no"
+            style="position:absolute;inset:0;width:100%;height:100%;"
+          ></iframe>
         </div>
-
-        <!-- Iframe injectée au clic -->
-        <div class="video-iframe-wrap" id="videoIframe"></div>
-
       </div>
+      <script src="https://fast.wistia.net/player.js" async></script>
 
       <a class="btn-primary fade-up fade-up-5" href="https://calendly.com/lesambitieuxacomplis/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
       <p class="cta-note fade-up fade-up-5">30 minutes · Gratuit · Sans engagement</p>
@@ -287,7 +278,7 @@ fbq('init','1496766415024234');fbq('track','PageView');
       var wrap = document.getElementById('videoIframe');
       wrap.style.display = 'block';
       wrap.innerHTML =
-        '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?autoPlay=1&muted=0&seo=true" ' +
+        '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?seo=true" ' +
         'title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" ' +
         'frameborder="0" scrolling="no" width="100%" height="100%"></iframe>';
       if (!document.querySelector('script[src*="wistia"]')) {
