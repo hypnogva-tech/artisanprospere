@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://artisanprospere.ch/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://artisanprospere.ch/merci</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://artisanprospere.ch/blog</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PLOMBIER -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-plombier-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ELECTRICIEN -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-electricien-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- PEINTRE -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-peintre-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- CHAUFFAGISTE -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-chauffagiste-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- CARRELEUR -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-carreleur-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- MENUISIER -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-menuisier-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- MACON -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-macon-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- PAYSAGISTE -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-paysagiste-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- SERRURIER -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-serrurier-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- COUVREUR -->
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-lausanne</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-geneve</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-fribourg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-nyon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-vevey</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://artisanprospere.ch/blog/site-internet-couvreur-yverdon</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>
