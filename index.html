@@ -3,82 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
-  <meta name="description" content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.">
+
+  <meta
+    name="description"
+    content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts chargé après le contenu critique -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"></noscript>
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+    media="print"
+    onload="this.media='all'"
+  >
+
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+    >
+  </noscript>
+
+  <script src="https://fast.wistia.net/player.js" async></script>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #0e0e0e; --white: #fafaf8; --gray-100: #f4f3f0;
-      --gray-200: #e8e6e1; --gray-400: #a8a49c; --gray-600: #6b6760;
-      --accent: #c8421a; --accent-light: #f5ece8;
-      --success: #1a7a4a; --success-light: #e8f5ee;
-      --radius: 12px; --radius-sm: 8px;
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', system-ui, sans-serif; background: var(--white); color: var(--black); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+    :root {
+      --black: #0e0e0e;
+      --white: #fafaf8;
+      --gray-100: #f4f3f0;
+      --gray-200: #e8e6e1;
+      --gray-400: #a8a49c;
+      --gray-600: #6b6760;
+      --accent: #c8421a;
+      --accent-light: #f5ece8;
+      --success: #1a7a4a;
+      --success-light: #e8f5ee;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
 
-    .fade-up { animation: fadeUp 0.7s ease both; }
-    .fade-up-1 { animation-delay: 0.1s; } .fade-up-2 { animation-delay: 0.25s; }
-    .fade-up-3 { animation-delay: 0.4s; } .fade-up-4 { animation-delay: 0.55s; }
-    .fade-up-5 { animation-delay: 0.7s; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
-    header .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; letter-spacing: -0.02em; }
-    .logo span { color: var(--accent); }
-    .header-cta { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; border: 1.5px solid var(--accent); padding: 8px 18px; border-radius: 999px; transition: background 0.2s, color 0.2s; }
-    .header-cta:hover { background: var(--accent); color: var(--white); }
+    body {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .hero { padding: 72px 0 56px; }
-    .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 6px 16px; border-radius: 999px; margin-bottom: 28px; }
-    .badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease infinite; }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-    h1 { font-weight: 800; font-size: clamp(30px, 5.5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--black); text-align: center; }
-    h1 em { font-style: normal; color: var(--accent); }
-    .hero-sub { font-size: 17px; line-height: 1.6; color: var(--gray-600); max-width: 520px; margin: 0 auto 32px; font-weight: 300; text-align: center; }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
 
-    /* VIDEO */
-    .video-wrap { margin-bottom: 32px; }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    .video-thumb {
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .header-cta {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-cta:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: clamp(30px, 5.5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--black);
+      text-align: center;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--gray-600);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .video-wrap {
+      margin-bottom: 32px;
       position: relative;
-      width: 100%;
       padding-top: 56.25%;
       border-radius: var(--radius);
       overflow: hidden;
-      cursor: pointer;
       background: #111;
     }
-    .video-thumb img {
+
+    #videoOverlay {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease, opacity 0.3s ease;
+      cursor: pointer;
+      background-image: url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
     }
-    .video-thumb:hover img { transform: scale(1.03); opacity: 0.82; }
-    .video-thumb .play-btn {
+
+    #videoOverlayInner {
       position: absolute;
       inset: 0;
+      background: rgba(0,0,0,0.18);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       gap: 10px;
-      background: rgba(0,0,0,0.22);
-      transition: background 0.2s;
     }
-    .video-thumb:hover .play-btn { background: rgba(0,0,0,0.35); }
+
     .play-circle {
       width: 72px;
       height: 72px;
@@ -90,219 +196,525 @@
       box-shadow: 0 8px 32px rgba(200,66,26,0.5);
       transition: transform 0.2s;
     }
-    .video-thumb:hover .play-circle { transform: scale(1.1); }
-    .play-label { color: white; font-size: 15px; font-weight: 600; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
-    .play-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin-top: -4px; }
 
-    .video-iframe-wrap {
-      display: none;
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      border-radius: var(--radius);
-      overflow: hidden;
+    #videoOverlay:hover .play-circle {
+      transform: scale(1.08);
     }
-    .video-iframe-wrap iframe {
+
+    .play-label {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .play-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      margin-top: -4px;
+    }
+
+    #videoPlayer {
       position: absolute;
       inset: 0;
+      z-index: 1;
+    }
+
+    #videoPlayer iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
 
-    .btn-primary { display: block; width: 100%; padding: 20px 32px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--white); background: var(--black); border: none; border-radius: var(--radius); cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-bottom: 12px; }
-    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
-    .btn-primary:active { transform: translateY(0); }
-    .cta-note { text-align: center; font-size: 13px; color: var(--gray-400); margin-bottom: 48px; }
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 20px 32px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 12px;
+    }
 
-    .divider { border: none; border-top: 1px solid var(--gray-200); margin: 0 0 48px; }
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
 
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 48px; }
-    .stat { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 16px; text-align: center; }
-    .stat-num { font-size: 26px; font-weight: 800; color: var(--black); display: block; letter-spacing: -0.03em; margin-bottom: 4px; }
-    .stat-label { font-size: 12px; color: var(--gray-600); line-height: 1.4; }
+    .cta-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 48px;
+    }
 
-    .points { list-style: none; margin-bottom: 48px; display: flex; flex-direction: column; gap: 14px; }
-    .points li { display: flex; align-items: flex-start; gap: 14px; font-size: 16px; line-height: 1.55; color: var(--gray-600); }
-    .check { width: 22px; height: 22px; border-radius: 50%; background: var(--success-light); flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
-    .points li strong { color: var(--black); font-weight: 500; }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 0 0 48px;
+    }
 
-    .booking-section { margin-bottom: 64px; text-align: center; background: var(--gray-100); border-radius: var(--radius); padding: 48px 32px; }
-    .section-title { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--black); }
-    .section-sub { font-size: 15px; color: var(--gray-600); margin-bottom: 32px; font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
 
-    .booking-features { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
-    .booking-feature { font-size: 13px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; }
-    .booking-feature::before { content: '✓'; color: var(--success); font-weight: 700; }
+    .stat {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+    }
 
-    .btn-calendly { display: inline-block; padding: 20px 48px; font-family: 'Montserrat', system-ui, sans-serif; font-size: 17px; font-weight: 700; color: var(--white); background: var(--accent); border-radius: var(--radius); text-decoration: none; transition: opacity 0.2s, transform 0.15s; }
-    .btn-calendly:hover { opacity: 0.88; transform: translateY(-2px); }
+    .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--black);
+      display: block;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
 
-    footer { border-top: 1px solid var(--gray-200); padding: 32px 0; text-align: center; }
-    .footer-logo { font-weight: 800; font-size: 16px; color: var(--black); letter-spacing: -0.02em; margin-bottom: 8px; }
-    .footer-logo span { color: var(--accent); }
-    footer p { font-size: 13px; color: var(--gray-400); }
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+
+    .points {
+      list-style: none;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--gray-600);
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--success-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .points li strong {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .booking-section {
+      margin-bottom: 64px;
+      text-align: center;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      font-weight: 300;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .booking-features {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .booking-feature {
+      font-size: 13px;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .booking-feature::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .btn-calendly {
+      display: inline-block;
+      padding: 20px 48px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--accent);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-calendly:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
 
     @media (max-width: 600px) {
-      .hero { padding: 48px 0 40px; }
-      h1 { font-size: 28px; }
-      .hero-sub { font-size: 15px; }
-      .stats { gap: 8px; }
-      .stat { padding: 14px 10px; }
-      .stat-num { font-size: 20px; }
-      .header-cta { display: none; }
-      .btn-primary { font-size: 16px; padding: 18px 24px; }
-      .booking-section { padding: 32px 20px; }
-      .btn-calendly { padding: 18px 32px; font-size: 15px; }
-      .play-circle { width: 58px; height: 58px; }
+
+      .hero {
+        padding: 48px 0 40px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 14px 10px;
+      }
+
+      .stat-num {
+        font-size: 20px;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .btn-primary {
+        font-size: 16px;
+        padding: 18px 24px;
+      }
+
+      .booking-section {
+        padding: 32px 20px;
+      }
+
+      .btn-calendly {
+        padding: 18px 32px;
+        font-size: 15px;
+      }
+
+      .play-circle {
+        width: 58px;
+        height: 58px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <a href="https://wa.me/41783206610" target="_blank" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:999;text-decoration:none;">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.527a.75.75 0 00.916.916l5.663-1.475A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.95-1.355l-.355-.211-3.683.957.983-3.585-.231-.369A9.721 9.721 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-  </a>
-
   <header>
+
     <div class="container">
-      <a class="logo" href="#">Artisan<span>Prospere</span>.ch</a>
-      <a class="header-cta"href="https://calendly.com/artisanpro/artisanprospere" target="_blank"">Réserver mon audit</a>
+
+      <a class="logo" href="#">
+        Artisan<span>Prospere</span>.ch
+      </a>
+
+      <a
+        class="header-cta"
+        href="https://calendly.com/artisanpro/artisanprospere"
+        target="_blank"
+      >
+        Réserver mon audit
+      </a>
+
     </div>
+
   </header>
 
   <section class="hero">
+
     <div class="container">
 
-      <div class="badge fade-up fade-up-1">Suisse romande · Artisans</div>
+      <div class="badge">
+        Suisse romande · Artisans
+      </div>
 
-      <h1 class="fade-up fade-up-2">
+      <h1>
         Comment facturer<br>
         1 à 2 clients de plus<br>
         chaque semaine grâce à ton site<br>
-        <em style="font-size:0.65em;">de manière régulière, prévisible<br>et sans prospecter</em>
+        <em style="font-size:0.65em;">
+          de manière régulière, prévisible<br>
+          et sans prospecter
+        </em>
       </h1>
 
-      <p class="hero-sub fade-up fade-up-3">
-        Pour les artisans (plombiers, charpentiers, peintres, nettoyeurs, entreprises de construction...) en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
+      <p class="hero-sub">
+        Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO : thumbnail + iframe lazy au clic -->
-      <div class="video-wrap fade-up fade-up-4" style="position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;">
+      <!-- VIDEO -->
 
-        <div id="videoOverlay" onclick="startVideo()" style="position:absolute;inset:0;cursor:pointer;background-image:url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');background-size:cover;background-position:center;">
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
-            <div style="width:72px;height:72px;background:#c8421a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(200,66,26,0.5);">
-              <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
+      <div class="video-wrap">
+
+        <div id="videoOverlay" onclick="startVideo()">
+
+          <div id="videoOverlayInner">
+
+            <div class="play-circle">
+
+              <svg width="26" height="26" viewBox="0 0 24 24">
+                <polygon points="7,4 21,12 7,20" fill="white"/>
+              </svg>
+
             </div>
-            <span style="color:white;font-size:15px;font-weight:600;font-family:'Montserrat',sans-serif;">▶ Regarder la vidéo</span>
-            <span style="color:rgba(255,255,255,0.7);font-size:12px;font-family:'Montserrat',sans-serif;">7 minutes · Active le son</span>
+
+            <span class="play-label">
+              ▶ Regarder la vidéo
+            </span>
+
+            <span class="play-sub">
+              7 minutes · Active le son
+            </span>
+
           </div>
+
         </div>
 
-        <div id="videoPlayer" style="position:absolute;inset:0;display:none;"></div>
+        <div id="videoPlayer">
+
+          <div class="wistia_responsive_padding"
+               style="padding:56.25% 0 0 0;position:relative;height:100%;">
+
+            <div class="wistia_responsive_wrapper"
+                 style="height:100%;left:0;position:absolute;top:0;width:100%;">
+
+              <iframe
+                id="wistiaFrame"
+                src="https://fast.wistia.net/embed/iframe/gr25cqtnhc?web_component=true&seo=true"
+                title="VSL ArtisanProspere"
+                allow="autoplay; fullscreen"
+                allowtransparency="true"
+                frameborder="0"
+                scrolling="no"
+                class="wistia_embed"
+                name="wistia_embed"
+                width="100%"
+                height="100%">
+              </iframe>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-      <script>
-        function startVideo() {
-          document.getElementById('videoOverlay').style.display = 'none';
-          var p = document.getElementById('videoPlayer');
-          p.style.display = 'block';
-          p.innerHTML = '<iframe src="https://www.youtube.com/embed/uAubkWOTl7A?autoplay=1&rel=0" title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowfullscreen frameborder="0" style="width:100%;height:100%;"></iframe>';
-        }
-      </script>
+      <a
+        class="btn-primary"
+        href="https://calendly.com/artisanpro/artisanprospere"
+        target="_blank"
+      >
+        → Réserver mon audit gratuit
+      </a>
 
-      <a class="btn-primary fade-up fade-up-5" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
-      <p class="cta-note fade-up fade-up-5">30 minutes · Gratuit · Sans engagement</p>
+      <p class="cta-note">
+        30 minutes · Gratuit · Sans engagement
+      </p>
 
       <hr class="divider">
 
       <div class="stats">
+
         <div class="stat">
           <span class="stat-num">7j</span>
           <span class="stat-label">Délai de livraison</span>
         </div>
+
         <div class="stat">
           <span class="stat-num">9/10</span>
           <span class="stat-label">Sites d'artisans ne convertissent pas</span>
         </div>
+
         <div class="stat">
           <span class="stat-num">0 CHF</span>
-          <span class="stat-label">Pour l'audit, même sans suite</span>
+          <span class="stat-label">Pour l'audit</span>
         </div>
+
       </div>
 
       <ul class="points">
+
         <li>
-          <span class="check"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Site optimisé vitesse, mobile et SEO technique</strong> — livré clé en main, tu fournis tes photos</span>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Site optimisé vitesse, mobile et SEO technique</strong>
+            — livré clé en main
+          </span>
         </li>
+
         <li>
-          <span class="check"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Formulaire de devis intelligent</strong> — fini les allers-retours pour avoir les infos de base</span>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Formulaire de devis intelligent</strong>
+            — fini les allers-retours
+          </span>
         </li>
+
         <li>
-          <span class="check"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Fiche Google créée et optimisée</strong> — pour exister quand on te cherche dans ta ville</span>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Fiche Google optimisée</strong>
+            — pour exister localement
+          </span>
         </li>
-        <li>
-          <span class="check"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="#1a7a4a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><strong>Livraison en 7 à 10 jours chrono</strong> — tu fournis tes photos, je m'occupe du reste</span>
-        </li>
+
       </ul>
 
       <hr class="divider">
 
-      <div class="booking-section" id="calendly">
-        <p class="section-title">Réserve ton audit gratuit</p>
-        <p class="section-sub">30 minutes pour analyser ton site ensemble. Tu repars avec un audit concret même si on ne travaille pas ensemble.</p>
+      <div class="booking-section">
+
+        <p class="section-title">
+          Réserve ton audit gratuit
+        </p>
+
+        <p class="section-sub">
+          30 minutes pour analyser ton site ensemble.
+        </p>
+
         <div class="booking-features">
-          <span class="booking-feature">Gratuit</span>
-          <span class="booking-feature">Sans engagement</span>
-          <span class="booking-feature">En visio</span>
-          <span class="booking-feature">30 minutes</span>
+
+          <span class="booking-feature">
+            Gratuit
+          </span>
+
+          <span class="booking-feature">
+            Sans engagement
+          </span>
+
+          <span class="booking-feature">
+            En visio
+          </span>
+
+          <span class="booking-feature">
+            30 minutes
+          </span>
+
         </div>
-        <a class="btn-calendly" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Choisir mon créneau</a>
+
+        <a
+          class="btn-calendly"
+          href="https://calendly.com/artisanpro/artisanprospere"
+          target="_blank"
+        >
+          → Choisir mon créneau
+        </a>
+
       </div>
 
     </div>
+
   </section>
 
   <footer>
+
     <div class="container">
-      <p class="footer-logo">Artisan<span>Prospere</span>.ch</p>
-      <p>Création de sites pour artisans en Suisse romande</p>
+
+      <p class="footer-logo">
+        Artisan<span>Prospere</span>.ch
+      </p>
+
+      <p>
+        Création de sites pour artisans en Suisse romande
+      </p>
+
     </div>
+
   </footer>
 
   <script>
-    function playVideo() {
-      document.getElementById('videoThumb').style.display = 'none';
-      var wrap = document.getElementById('videoIframe');
-      wrap.style.display = 'block';
-      wrap.innerHTML =
-        '<iframe src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?seo=true" ' +
-        'title="VSL ArtisanProspere" allow="autoplay; fullscreen" allowtransparency="true" ' +
-        'frameborder="0" scrolling="no" width="100%" height="100%"></iframe>';
-      if (!document.querySelector('script[src*="wistia"]')) {
-        var s = document.createElement('script');
-        s.src = 'https://fast.wistia.net/player.js';
-        s.async = true;
-        document.head.appendChild(s);
-      }
-    }
-  </script>
 
-  <!-- FB Pixel chargé après le rendu de la page -->
-  <script>
-    window.addEventListener('load', function() {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init','1496766415024234');fbq('track','PageView');
-    });
+    function startVideo() {
+
+      document.getElementById('videoOverlay').remove();
+
+      const iframe = document.getElementById('wistiaFrame');
+
+      iframe.src =
+        'https://fast.wistia.net/embed/iframe/gr25cqtnhc?autoplay=1&web_component=true&seo=true';
+    }
+
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1496766415024234&ev=PageView&noscript=1"/></noscript>
 
 </body>
 </html>
