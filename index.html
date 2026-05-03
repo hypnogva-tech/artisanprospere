@@ -31,7 +31,6 @@
   <script src="https://fast.wistia.net/player.js" async></script>
 
   <style>
-
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -162,6 +161,7 @@
       border-radius: var(--radius);
       overflow: hidden;
       background: #111;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
     #videoOverlay {
@@ -172,22 +172,23 @@
       background-size: cover;
       background-position: center;
       z-index: 2;
+      transition: opacity 0.3s ease;
     }
 
     #videoOverlayInner {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.18);
+      background: rgba(0,0,0,0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .play-circle {
-      width: 72px;
-      height: 72px;
+      width: 80px;
+      height: 80px;
       background: var(--accent);
       border-radius: 50%;
       display: flex;
@@ -198,32 +199,28 @@
     }
 
     #videoOverlay:hover .play-circle {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
 
     .play-label {
       color: white;
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
     .play-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 12px;
-      margin-top: -4px;
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      background: rgba(0,0,0,0.4);
+      padding: 4px 12px;
+      border-radius: 99px;
     }
 
     #videoPlayer {
       position: absolute;
       inset: 0;
       z-index: 1;
-    }
-
-    #videoPlayer iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
     }
 
     .btn-primary {
@@ -318,11 +315,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .points li strong {
-      color: var(--black);
-      font-weight: 500;
+      color: var(--success);
+      font-weight: bold;
     }
 
     .booking-section {
@@ -336,41 +330,8 @@
     .section-title {
       font-size: 28px;
       font-weight: 800;
-      letter-spacing: -0.02em;
       margin-bottom: 8px;
       color: var(--black);
-    }
-
-    .section-sub {
-      font-size: 15px;
-      color: var(--gray-600);
-      margin-bottom: 32px;
-      font-weight: 300;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .booking-features {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    .booking-feature {
-      font-size: 13px;
-      color: var(--gray-600);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .booking-feature::before {
-      content: '✓';
-      color: var(--success);
-      font-weight: 700;
     }
 
     .btn-calendly {
@@ -386,334 +347,108 @@
       transition: opacity 0.2s, transform 0.15s;
     }
 
-    .btn-calendly:hover {
-      opacity: 0.88;
-      transform: translateY(-2px);
-    }
-
     footer {
       border-top: 1px solid var(--gray-200);
       padding: 32px 0;
       text-align: center;
     }
 
-    .footer-logo {
-      font-weight: 800;
-      font-size: 16px;
-      color: var(--black);
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-    }
-
-    .footer-logo span {
-      color: var(--accent);
-    }
-
-    footer p {
-      font-size: 13px;
-      color: var(--gray-400);
-    }
-
     @media (max-width: 600px) {
-
-      .hero {
-        padding: 48px 0 40px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .hero-sub {
-        font-size: 15px;
-      }
-
-      .stats {
-        gap: 8px;
-      }
-
-      .stat {
-        padding: 14px 10px;
-      }
-
-      .stat-num {
-        font-size: 20px;
-      }
-
-      .header-cta {
-        display: none;
-      }
-
-      .btn-primary {
-        font-size: 16px;
-        padding: 18px 24px;
-      }
-
-      .booking-section {
-        padding: 32px 20px;
-      }
-
-      .btn-calendly {
-        padding: 18px 32px;
-        font-size: 15px;
-      }
-
-      .play-circle {
-        width: 58px;
-        height: 58px;
-      }
-
+      .hero { padding: 48px 0 40px; }
+      h1 { font-size: 28px; }
+      .stats { grid-template-columns: 1fr; }
+      .header-cta { display: none; }
+      .play-circle { width: 64px; height: 64px; }
     }
-
   </style>
 </head>
 
 <body>
 
   <header>
-
     <div class="container">
-
-      <a class="logo" href="#">
-        Artisan<span>Prospere</span>.ch
-      </a>
-
-      <a
-        class="header-cta"
-        href="https://calendly.com/artisanpro/artisanprospere"
-        target="_blank"
-      >
-        Réserver mon audit
-      </a>
-
+      <a class="logo" href="#">Artisan<span>Prospere</span>.ch</a>
+      <a class="header-cta" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">Réserver mon audit</a>
     </div>
-
   </header>
 
   <section class="hero">
-
     <div class="container">
-
-      <div class="badge">
-        Suisse romande · Artisans
-      </div>
+      <div class="badge">Suisse romande · Artisans</div>
 
       <h1>
         Comment facturer<br>
         1 à 2 clients de plus<br>
         chaque semaine grâce à ton site<br>
-        <em style="font-size:0.65em;">
-          de manière régulière, prévisible<br>
-          et sans prospecter
-        </em>
+        <em style="font-size:0.65em;">de manière régulière, prévisible et sans prospecter</em>
       </h1>
 
-      <p class="hero-sub">
-        Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
-      </p>
-
-      <!-- VIDEO -->
+      <p class="hero-sub">Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.</p>
 
       <div class="video-wrap">
-
         <div id="videoOverlay" onclick="startVideo()">
-
           <div id="videoOverlayInner">
-
             <div class="play-circle">
-
-              <svg width="26" height="26" viewBox="0 0 24 24">
+              <svg width="30" height="30" viewBox="0 0 24 24">
                 <polygon points="7,4 21,12 7,20" fill="white"/>
               </svg>
-
             </div>
-
-            <span class="play-label">
-              ▶ Regarder la vidéo
-            </span>
-
-            <span class="play-sub">
-              7 minutes · Active le son
-            </span>
-
+            <span class="play-label">Lancer la vidéo</span>
+            <span class="play-sub">🔈 Puis cliquez sur la vidéo pour le son</span>
           </div>
-
         </div>
 
         <div id="videoPlayer">
-
-          <div class="wistia_responsive_padding"
-               style="padding:56.25% 0 0 0;position:relative;height:100%;">
-
-            <div class="wistia_responsive_wrapper"
-                 style="height:100%;left:0;position:absolute;top:0;width:100%;">
-
-              <iframe
-                id="wistiaFrame"
-                src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true"
-                title="VSL ArtisanProspere"
-                allow="autoplay; fullscreen"
-                allowtransparency="true"
-                frameborder="0"
-                scrolling="no"
-                class="wistia_embed"
-                name="wistia_embed"
-                width="100%"
-                height="100%">
-              </iframe>
-
+          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;height:100%;">
+            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+              <iframe id="wistiaFrame" src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe>
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-      <a
-        class="btn-primary"
-        href="https://calendly.com/artisanpro/artisanprospere"
-        target="_blank"
-      >
-        → Réserver mon audit gratuit
-      </a>
-
-      <p class="cta-note">
-        30 minutes · Gratuit · Sans engagement
-      </p>
+      <a class="btn-primary" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
+      <p class="cta-note">30 minutes · Gratuit · Sans engagement</p>
 
       <hr class="divider">
 
       <div class="stats">
-
-        <div class="stat">
-          <span class="stat-num">7j</span>
-          <span class="stat-label">Délai de livraison</span>
-        </div>
-
-        <div class="stat">
-          <span class="stat-num">9/10</span>
-          <span class="stat-label">Sites d'artisans ne convertissent pas</span>
-        </div>
-
-        <div class="stat">
-          <span class="stat-num">0 CHF</span>
-          <span class="stat-label">Pour l'audit</span>
-        </div>
-
+        <div class="stat"><span class="stat-num">7j</span><span class="stat-label">Délai de livraison</span></div>
+        <div class="stat"><span class="stat-num">9/10</span><span class="stat-label">Échec des sites artisans</span></div>
+        <div class="stat"><span class="stat-num">0 CHF</span><span class="stat-label">Coût de l'audit</span></div>
       </div>
 
       <ul class="points">
-
-        <li>
-          <span class="check">
-            ✓
-          </span>
-
-          <span>
-            <strong>Site optimisé vitesse, mobile et SEO technique</strong>
-            — livré clé en main
-          </span>
-        </li>
-
-        <li>
-          <span class="check">
-            ✓
-          </span>
-
-          <span>
-            <strong>Formulaire de devis intelligent</strong>
-            — fini les allers-retours
-          </span>
-        </li>
-
-        <li>
-          <span class="check">
-            ✓
-          </span>
-
-          <span>
-            <strong>Fiche Google optimisée</strong>
-            — pour exister localement
-          </span>
-        </li>
-
+        <li><span class="check">✓</span><span><strong>Site optimisé conversion</strong> — livré clé en main</span></li>
+        <li><span class="check">✓</span><span><strong>Formulaire de devis intelligent</strong> — fini les appels inutiles</span></li>
+        <li><span class="check">✓</span><span><strong>Fiche Google optimisée</strong> — pour dominer ta région</span></li>
       </ul>
 
-      <hr class="divider">
-
       <div class="booking-section">
-
-        <p class="section-title">
-          Réserve ton audit gratuit
-        </p>
-
-        <p class="section-sub">
-          30 minutes pour analyser ton site ensemble.
-        </p>
-
-        <div class="booking-features">
-
-          <span class="booking-feature">
-            Gratuit
-          </span>
-
-          <span class="booking-feature">
-            Sans engagement
-          </span>
-
-          <span class="booking-feature">
-            En visio
-          </span>
-
-          <span class="booking-feature">
-            30 minutes
-          </span>
-
-        </div>
-
-        <a
-          class="btn-calendly"
-          href="https://calendly.com/artisanpro/artisanprospere"
-          target="_blank"
-        >
-          → Choisir mon créneau
-        </a>
-
+        <p class="section-title">Audit gratuit (30 min)</p>
+        <p class="section-sub">On analyse ton site et tes opportunités ensemble.</p>
+        <a class="btn-calendly" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Choisir mon créneau</a>
       </div>
-
     </div>
-
   </section>
 
   <footer>
-
     <div class="container">
-
-      <p class="footer-logo">
-        Artisan<span>Prospere</span>.ch
-      </p>
-
-      <p>
-        Création de sites pour artisans en Suisse romande
-      </p>
-
+      <p class="footer-logo">Artisan<span>Prospere</span>.ch</p>
+      <p>Expertise web pour les artisans romands</p>
     </div>
-
   </footer>
 
   <script>
-
     function startVideo() {
-
-      document.getElementById('videoOverlay').remove();
+      const overlay = document.getElementById('videoOverlay');
+      overlay.style.opacity = '0';
+      setTimeout(() => { overlay.remove(); }, 300);
 
       const iframe = document.getElementById('wistiaFrame');
-
-      iframe.src =
-        'https://fast.wistia.net/embed/iframe/j4hsy8feq9?autoplay=1&web_component=true&seo=true';
+      // On ajoute autoplay=1 à l'URL existante
+      iframe.src = iframe.src + "&autoplay=1";
     }
-
   </script>
 
 </body>
