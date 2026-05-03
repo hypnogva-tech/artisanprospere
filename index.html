@@ -7,8 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-  <script src="https://fast.wistia.net/player.js" async></script>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -28,13 +26,11 @@
 
     /* --- VIDEO SECTION --- */
     .video-container { margin-bottom: 40px; position: relative; }
-    
     .video-wrap {
       position: relative; padding-top: 56.25%; border-radius: var(--radius);
       overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
     }
 
-    /* Message d'alerte pour le son (caché au début) */
     #audioAlert {
       display: none; background: #ffeb3b; color: #000; padding: 12px;
       font-weight: 700; font-size: 14px; border-radius: 8px; margin-bottom: 15px;
@@ -58,7 +54,6 @@
       display: flex; align-items: center; justify-content: center; position: relative;
     }
 
-    /* Animation d'onde autour du bouton */
     .play-btn::after {
       content: ""; position: absolute; width: 100%; height: 100%;
       background: var(--accent); border-radius: 50%; z-index: -1;
@@ -72,17 +67,24 @@
 
     .play-text { color: white; font-weight: 800; font-size: 18px; margin-top: 20px; text-transform: uppercase; }
 
-    /* --- RESTE DU SITE --- */
     .btn-primary {
-      display: block; background: var(--black); color: white; padding: 20px;
+      display: inline-block; background: var(--black); color: white; padding: 20px 40px;
       border-radius: var(--radius); font-weight: 700; text-decoration: none; margin-bottom: 40px;
+      width: 100%; transition: transform 0.2s;
     }
+    .btn-primary:hover { transform: scale(1.02); }
+
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
     .stat { background: var(--gray-100); padding: 15px; border-radius: 8px; }
     .stat-num { display: block; font-weight: 800; font-size: 22px; color: var(--accent); }
     .stat-label { font-size: 11px; color: var(--gray-600); }
 
-    footer { padding: 40px 0; border-top: 1px solid #eee; font-size: 12px; color: #aaa; }
+    /* FAQ Style */
+    .faq-item { margin-bottom: 25px; text-align: left; }
+    .faq-q { font-weight: 700; font-size: 16px; margin-bottom: 8px; display: block; }
+    .faq-a { font-size: 15px; color: var(--gray-600); line-height: 1.5; }
+
+    footer a:hover { color: var(--accent) !important; }
   </style>
 </head>
 <body>
@@ -101,7 +103,7 @@
     </h1>
 
     <div class="video-container">
-      <div id="audioAlert">⚠️ LA VIDÉO A DÉMARRÉ : CLIQUEZ 1X SUR LA VIDEO POUR ACTIVER LE SON 🔈</div>
+      <div id="audioAlert">⚠️ LA VIDÉO A DÉMARRÉ : CLIQUEZ 1X SUR LA VIDÉO POUR ACTIVER LE SON 🔈</div>
 
       <div class="video-wrap">
         <div id="videoOverlay" onclick="handleStart()">
@@ -110,7 +112,6 @@
           </div>
           <span class="play-text">CLIQUEZ POUR LANCER</span>
         </div>
-
         <div id="videoPlayer" style="position:absolute; inset:0;">
           <iframe id="wistiaFrame" src="https://fast.wistia.net/embed/iframe/j4hsy8feq9" allow="autoplay; fullscreen" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
         </div>
@@ -125,43 +126,38 @@
       <div class="stat"><span class="stat-num">0 CHF</span><span class="stat-label">Prix Audit</span></div>
     </div>
   </section>
-</div>
 
-<div class="container">
   <section style="margin-top: 40px; padding: 60px 0; border-top: 1px solid #eee;">
     <h2 style="font-weight: 800; font-size: 28px; margin-bottom: 40px; text-align: center;">Questions fréquentes</h2>
     
-    <div style="display: grid; gap: 30px;">
-      <div>
-        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Est-ce que je vais devoir passer des heures sur l'ordinateur ?</p>
-        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Absolument pas. On sait que votre place est sur le chantier, pas derrière un écran. Notre système est conçu pour être autonome : nous gérons la technique, vous recevez les appels.</p>
-      </div>
+    <div class="faq-item">
+      <span class="faq-q">Est-ce que je vais devoir passer des heures sur l'ordinateur ?</span>
+      <p class="faq-a">Absolument pas. On sait que votre place est sur le chantier, pas derrière un écran. Notre système est conçu pour être autonome : nous gérons la technique, vous recevez les appels.</p>
+    </div>
 
-      <div>
-        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Pourquoi l'audit est-il gratuit ?</p>
-        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">C'est notre façon de filtrer les demandes. Si l'analyse montre que nous pouvons vous apporter un retour sur investissement massif, nous vous proposerons de collaborer. Sinon, on se quitte bons amis avec des conseils offerts.</p>
-      </div>
+    <div class="faq-item">
+      <span class="faq-q">Pourquoi l'audit est-il gratuit ?</span>
+      <p class="faq-a">C'est notre façon de filtrer les demandes. Si l'analyse montre que nous pouvons vous apporter un retour sur investissement massif, nous vous proposerons de collaborer. Sinon, on se quitte bons amis avec des conseils offerts.</p>
+    </div>
 
-      <div>
-        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Je travaille déjà avec une agence ou j'ai déjà un site...</p>
-        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Un site "vitrine" ne rapporte rien s'il n'est pas optimisé pour la conversion. Notre audit compare votre solution actuelle avec notre méthode de capture de leads pour voir le manque à gagner.</p>
-      </div>
+    <div class="faq-item">
+      <span class="faq-q">Je travaille déjà avec une agence ou j'ai déjà un site...</span>
+      <p class="faq-a">Un site "vitrine" ne rapporte rien s'il n'est pas optimisé pour la conversion. Notre audit compare votre solution actuelle avec notre méthode de capture de leads pour voir le manque à gagner.</p>
+    </div>
 
-      <div>
-        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Combien de temps avant de voir les premiers résultats ?</p>
-        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Une fois le système lancé, les premières demandes de devis arrivent généralement sous 7 à 14 jours selon votre secteur géographique.</p>
-      </div>
+    <div class="faq-item">
+      <span class="faq-q">Combien de temps avant de voir les premiers résultats ?</span>
+      <p class="faq-a">Une fois le système lancé, les premières demandes de devis arrivent généralement sous 7 à 14 jours selon votre secteur géographique.</p>
     </div>
   </section>
-</div>
-  <div class="container" style="text-align: center; padding: 40px 0 60px 0;">
-  <p style="font-weight: 700; font-size: 18px; margin-bottom: 25px;">Prêt à transformer votre activité ?</p>
-  <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="btn-primary" style="max-width: 400px; margin: 0 auto;">
-    → RÉSERVER MON AUDIT GRATUIT
-  </a>
-  <p style="font-size: 13px; color: var(--gray-600); margin-top: 15px;">
-    ⚡️ Places limitées à 2 nouveaux artisans par mois.
-  </p>
+
+  <section style="text-align: center; padding: 20px 0 80px 0;">
+    <p style="font-weight: 700; font-size: 18px; margin-bottom: 25px;">Prêt à transformer votre activité ?</p>
+    <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="btn-primary" style="max-width: 450px;">
+      → RÉSERVER MON AUDIT GRATUIT
+    </a>
+    <p style="font-size: 13px; color: var(--gray-600); margin-top: 15px;">⚡️ Places limitées à 2 nouveaux artisans par mois.</p>
+  </section>
 </div>
 
 <footer style="background: #f9f9f7; padding: 60px 0 30px 0; border-top: 1px solid #e8e6e1; color: var(--black);">
@@ -171,24 +167,46 @@
         <a href="#" class="logo">Artisan<span>Prospere</span>.ch</a>
         <p style="font-size: 13px; color: var(--gray-600); margin-top: 15px;">Accompagnement stratégique pour les professionnels du bâtiment en Suisse Romande.</p>
       </div>
-      
       <div>
         <p style="font-weight: 800; font-size: 14px; margin-bottom: 15px; text-transform: uppercase;">Contact</p>
         <p style="font-size: 13px; color: var(--gray-600);">Suisse Romande<br>Email: contact@artisanprospere.ch</p>
       </div>
-
       <div>
         <p style="font-weight: 800; font-size: 14px; margin-bottom: 15px; text-transform: uppercase;">Informations</p>
         <ul style="list-style: none; font-size: 13px;">
           <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Mentions Légales</a></li>
           <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Protection des données</a></li>
-          <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Conditions Générales</a></li>
         </ul>
       </div>
     </div>
-
     <div style="text-align: center; padding-top: 30px; border-top: 1px solid #e8e6e1; font-size: 12px; color: #aaa;">
       © 2026 ArtisanProspere.ch — Tous droits réservés.
     </div>
   </div>
 </footer>
+
+<script>
+  function handleStart() {
+    // 1. Masquer l'image (Overlay)
+    var overlay = document.getElementById('videoOverlay');
+    if (overlay) overlay.style.display = 'none';
+    
+    // 2. Afficher l'alerte sonore
+    var alertBox = document.getElementById('audioAlert');
+    if (alertBox) alertBox.style.display = 'block';
+    
+    // 3. Lancer la vidéo Wistia proprement
+    var iframe = document.getElementById('wistiaFrame');
+    var currentSrc = iframe.src;
+    
+    // On vérifie si l'URL a déjà des paramètres pour mettre ? ou &
+    var separator = currentSrc.indexOf('?') !== -1 ? "&" : "?";
+    iframe.src = currentSrc + separator + "autoplay=1";
+    
+    // 4. Scroll vers la vidéo pour confort mobile
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
