@@ -150,3 +150,31 @@
 
 </body>
 </html>
+<script>
+      function handleStart() {
+        // 1. On cache l'image de couverture (Overlay)
+        const overlay = document.getElementById('videoOverlay');
+        if (overlay) overlay.style.display = 'none';
+        
+        // 2. On affiche l'alerte jaune flashy pour le son
+        const alertBox = document.getElementById('audioAlert');
+        if (alertBox) alertBox.style.display = 'block';
+        
+        // 3. On lance la vidéo en ajoutant les paramètres Wistia pour l'autoplay
+        var iframe = document.getElementById('wistiaFrame');
+        var videoSrc = iframe.src;
+        
+        // On vérifie si les paramètres existent déjà pour éviter les doublons
+        if (videoSrc.indexOf('?') === -1) {
+          iframe.src += "?autoplay=1&muted=0";
+        } else {
+          iframe.src += "&autoplay=1&muted=0";
+        }
+        
+        // 4. Petit défilement fluide pour bien voir la vidéo et l'alerte
+        window.scrollTo({ top: 100, behavior: 'smooth' });
+      }
+    </script>
+
+  </body>
+</html>
