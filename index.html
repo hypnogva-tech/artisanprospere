@@ -127,90 +127,59 @@
   </section>
 </div>
 
-<footer>
-  <div class="container">© ArtisanProspere.ch — 2026</div>
+<div class="container">
+  <section style="margin-top: 40px; padding: 60px 0; border-top: 1px solid #eee;">
+    <h2 style="font-weight: 800; font-size: 28px; margin-bottom: 40px; text-align: center;">Questions fréquentes</h2>
+    
+    <div style="display: grid; gap: 30px;">
+      <div>
+        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Est-ce que je vais devoir passer des heures sur l'ordinateur ?</p>
+        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Absolument pas. On sait que votre place est sur le chantier, pas derrière un écran. Notre système est conçu pour être autonome : nous gérons la technique, vous recevez les appels.</p>
+      </div>
+
+      <div>
+        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Pourquoi l'audit est-il gratuit ?</p>
+        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">C'est notre façon de filtrer les demandes. Si l'analyse montre que nous pouvons vous apporter un retour sur investissement massif, nous vous proposerons de collaborer. Sinon, on se quitte bons amis avec des conseils offerts.</p>
+      </div>
+
+      <div>
+        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Je travaille déjà avec une agence ou j'ai déjà un site...</p>
+        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Un site "vitrine" ne rapporte rien s'il n'est pas optimisé pour la conversion. Notre audit compare votre solution actuelle avec notre méthode de capture de leads pour voir le manque à gagner.</p>
+      </div>
+
+      <div>
+        <p style="font-weight: 700; font-size: 16px; margin-bottom: 8px;">Combien de temps avant de voir les premiers résultats ?</p>
+        <p style="font-size: 15px; color: var(--gray-600); line-height: 1.5;">Une fois le système lancé, les premières demandes de devis arrivent généralement sous 7 à 14 jours selon votre secteur géographique.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer style="background: #f9f9f7; padding: 60px 0 30px 0; border-top: 1px solid #e8e6e1; color: var(--black);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+      <div>
+        <a href="#" class="logo">Artisan<span>Prospere</span>.ch</a>
+        <p style="font-size: 13px; color: var(--gray-600); margin-top: 15px;">Accompagnement stratégique pour les professionnels du bâtiment en Suisse Romande.</p>
+      </div>
+      
+      <div>
+        <p style="font-weight: 800; font-size: 14px; margin-bottom: 15px; text-transform: uppercase;">Contact</p>
+        <p style="font-size: 13px; color: var(--gray-600);">Suisse Romande<br>Email: contact@artisanprospere.ch</p>
+      </div>
+
+      <div>
+        <p style="font-weight: 800; font-size: 14px; margin-bottom: 15px; text-transform: uppercase;">Informations</p>
+        <ul style="list-style: none; font-size: 13px;">
+          <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Mentions Légales</a></li>
+          <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Protection des données</a></li>
+          <li style="margin-bottom: 8px;"><a href="#" style="color: var(--gray-600); text-decoration: none;">Conditions Générales</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding-top: 30px; border-top: 1px solid #e8e6e1; font-size: 12px; color: #aaa;">
+      © 2026 ArtisanProspere.ch — Tous droits réservés.
+    </div>
+  </div>
 </footer>
-
-<script>
-  function handleStart() {
-    // 1. On cache l'image de couverture
-    document.getElementById('videoOverlay').style.display = 'none';
-    
-    // 2. On affiche l'alerte jaune flashy pour le son
-    document.getElementById('audioAlert').style.display = 'block';
-    
-    // 3. On lance la vidéo
-    var iframe = document.getElementById('wistiaFrame');
-    iframe.src += "?autoplay=1";
-    
-    // 4. Optionnel : On fait défiler un peu pour que l'alerte soit bien centrée
-    window.scrollTo({ top: 150, behavior: 'smooth' });
-  }
-</script>
-
-</body>
-</html>
-<script>
-      function handleStart() {
-        // 1. On cache l'image de couverture (Overlay)
-        const overlay = document.getElementById('videoOverlay');
-        if (overlay) overlay.style.display = 'none';
-        
-        // 2. On affiche l'alerte jaune flashy pour le son
-        const alertBox = document.getElementById('audioAlert');
-        if (alertBox) alertBox.style.display = 'block';
-        
-        // 3. On lance la vidéo en ajoutant les paramètres Wistia pour l'autoplay
-        var iframe = document.getElementById('wistiaFrame');
-        var videoSrc = iframe.src;
-        
-        // On vérifie si les paramètres existent déjà pour éviter les doublons
-        if (videoSrc.indexOf('?') === -1) {
-          iframe.src += "?autoplay=1&muted=0";
-        } else {
-          iframe.src += "&autoplay=1&muted=0";
-        }
-        
-        // 4. Petit défilement fluide pour bien voir la vidéo et l'alerte
-        window.scrollTo({ top: 100, behavior: 'smooth' });
-      }
-    </script>
-
-  </body>
-</html>
-<section style="margin-top: 50px; padding: 40px 0; border-top: 1px solid #eee;">
-  <h2 style="font-weight: 800; font-size: 24px; margin-bottom: 30px; text-align: center; color: var(--black);">Comment se déroule l'audit ?</h2>
-  
-  <div style="display: grid; gap: 20px; margin-bottom: 40px;">
-    <div style="background: var(--gray-100); padding: 20px; border-radius: var(--radius); display: flex; align-items: flex-start; gap: 15px;">
-      <span style="background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 14px;">1</span>
-      <div>
-        <p style="font-weight: 700; font-size: 16px;">Analyse de votre visibilité locale</p>
-        <p style="font-size: 14px; color: var(--gray-600);">On regarde précisément combien de personnes cherchent vos services chaque mois dans votre région (Vaud, Valais, Genève, etc.).</p>
-      </div>
-    </div>
-
-    <div style="background: var(--gray-100); padding: 20px; border-radius: var(--radius); display: flex; align-items: flex-start; gap: 15px;">
-      <span style="background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 14px;">2</span>
-      <div>
-        <p style="font-weight: 700; font-size: 16px;">Étude de la concurrence</p>
-        <p style="font-size: 14px; color: var(--gray-600);">On identifie pourquoi vos concurrents prennent des parts de marché et comment repasser devant eux.</p>
-      </div>
-    </div>
-
-    <div style="background: var(--gray-100); padding: 20px; border-radius: var(--radius); display: flex; align-items: flex-start; gap: 15px;">
-      <span style="background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 800; font-size: 14px;">3</span>
-      <div>
-        <p style="font-weight: 700; font-size: 16px;">Plan de déploiement</p>
-        <p style="font-size: 14px; color: var(--gray-600);">À la fin des 15 min, vous savez exactement quoi mettre en place. Libre à vous de le faire seul ou de nous demander de l'aider.</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="text-align: center; border: 2px dashed #ccc; padding: 30px; border-radius: var(--radius);">
-    <p style="font-size: 15px; color: var(--black); font-weight: 600; margin-bottom: 10px;">⚠️ Important :</p>
-    <p style="font-size: 14px; color: var(--gray-600); line-height: 1.4;">
-      Cet appel n'est pas une session de vente forcée. C'est un échange technique entre professionnels. Si nous pensons que notre solution n'est pas rentable pour vous, nous vous le dirons honnêtement.
-    </p>
-  </div>
-</section>
