@@ -3,453 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
-
-  <meta
-    name="description"
-    content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille."
-  >
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
-    media="print"
-    onload="this.media='all'"
-  >
-
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
-    >
-  </noscript>
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
   <script src="https://fast.wistia.net/player.js" async></script>
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --black: #0e0e0e;
-      --white: #fafaf8;
-      --gray-100: #f4f3f0;
-      --gray-200: #e8e6e1;
-      --gray-400: #a8a49c;
-      --gray-600: #6b6760;
-      --accent: #c8421a;
-      --accent-light: #f5ece8;
-      --success: #1a7a4a;
-      --success-light: #e8f5ee;
-      --radius: 12px;
-      --radius-sm: 8px;
+      --black: #0e0e0e; --white: #fafaf8; --gray-100: #f4f3f0;
+      --gray-600: #6b6760; --accent: #c8421a; --radius: 12px;
     }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    
+    header { padding: 20px 0; border-bottom: 1px solid #e8e6e1; }
+    .logo { font-weight: 800; font-size: 18px; text-decoration: none; color: var(--black); }
+    .logo span { color: var(--accent); }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    .hero { padding: 60px 0; text-align: center; }
+    h1 { font-weight: 800; font-size: clamp(26px, 5vw, 42px); line-height: 1.1; margin-bottom: 24px; }
+    h1 em { font-style: normal; color: var(--accent); display: block; font-size: 0.6em; margin-top: 8px; }
 
-    body {
-      font-family: 'Montserrat', system-ui, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      font-size: 17px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--black);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .header-cta {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1.5px solid var(--accent);
-      padding: 8px 18px;
-      border-radius: 999px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .header-cta:hover {
-      background: var(--accent);
-      color: var(--white);
-    }
-
-    .hero {
-      padding: 72px 0 56px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-light);
-      padding: 6px 16px;
-      border-radius: 999px;
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      font-weight: 800;
-      font-size: clamp(30px, 5.5vw, 48px);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-      color: var(--black);
-      text-align: center;
-    }
-
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--gray-600);
-      max-width: 520px;
-      margin: 0 auto 32px;
-      font-weight: 300;
-      text-align: center;
-    }
-
+    /* --- VIDEO SECTION --- */
+    .video-container { margin-bottom: 40px; position: relative; }
+    
     .video-wrap {
-      margin-bottom: 32px;
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: #111;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      position: relative; padding-top: 56.25%; border-radius: var(--radius);
+      overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+
+    /* Message d'alerte pour le son (caché au début) */
+    #audioAlert {
+      display: none; background: #ffeb3b; color: #000; padding: 12px;
+      font-weight: 700; font-size: 14px; border-radius: 8px; margin-bottom: 15px;
+      border: 2px solid #fbc02d; animation: pulse-yellow 1.5s infinite;
+    }
+
+    @keyframes pulse-yellow {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
     }
 
     #videoOverlay {
-      position: absolute;
-      inset: 0;
-      cursor: pointer;
-      background-image: url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');
-      background-size: cover;
-      background-position: center;
-      z-index: 2;
-      transition: opacity 0.3s ease;
+      position: absolute; inset: 0; z-index: 10; cursor: pointer;
+      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png') center/cover;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
 
-    #videoOverlayInner {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
+    .play-btn {
+      width: 90px; height: 90px; background: var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; position: relative;
     }
 
-    .play-circle {
-      width: 80px;
-      height: 80px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 32px rgba(200,66,26,0.5);
-      transition: transform 0.2s;
+    /* Animation d'onde autour du bouton */
+    .play-btn::after {
+      content: ""; position: absolute; width: 100%; height: 100%;
+      background: var(--accent); border-radius: 50%; z-index: -1;
+      animation: ripple 1.5s infinite;
     }
 
-    #videoOverlay:hover .play-circle {
-      transform: scale(1.1);
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.8); opacity: 0; }
     }
 
-    .play-label {
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
+    .play-text { color: white; font-weight: 800; font-size: 18px; margin-top: 20px; text-transform: uppercase; }
 
-    .play-sub {
-      color: rgba(255,255,255,0.9);
-      font-size: 13px;
-      background: rgba(0,0,0,0.4);
-      padding: 4px 12px;
-      border-radius: 99px;
-    }
-
-    #videoPlayer {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
+    /* --- RESTE DU SITE --- */
     .btn-primary {
-      display: block;
-      width: 100%;
-      padding: 20px 32px;
-      font-family: 'Montserrat', system-ui, sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      background: var(--black);
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      margin-bottom: 12px;
+      display: block; background: var(--black); color: white; padding: 20px;
+      border-radius: var(--radius); font-weight: 700; text-decoration: none; margin-bottom: 40px;
     }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
+    .stat { background: var(--gray-100); padding: 15px; border-radius: 8px; }
+    .stat-num { display: block; font-weight: 800; font-size: 22px; color: var(--accent); }
+    .stat-label { font-size: 11px; color: var(--gray-600); }
 
-    .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .cta-note {
-      text-align: center;
-      font-size: 13px;
-      color: var(--gray-400);
-      margin-bottom: 48px;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--gray-200);
-      margin: 0 0 48px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 48px;
-    }
-
-    .stat {
-      background: var(--gray-100);
-      border-radius: var(--radius-sm);
-      padding: 20px 16px;
-      text-align: center;
-    }
-
-    .stat-num {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--black);
-      display: block;
-      letter-spacing: -0.03em;
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      font-size: 12px;
-      color: var(--gray-600);
-      line-height: 1.4;
-    }
-
-    .points {
-      list-style: none;
-      margin-bottom: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .points li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 16px;
-      line-height: 1.55;
-      color: var(--gray-600);
-    }
-
-    .check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--success-light);
-      flex-shrink: 0;
-      margin-top: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--success);
-      font-weight: bold;
-    }
-
-    .booking-section {
-      margin-bottom: 64px;
-      text-align: center;
-      background: var(--gray-100);
-      border-radius: var(--radius);
-      padding: 48px 32px;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--black);
-    }
-
-    .btn-calendly {
-      display: inline-block;
-      padding: 20px 48px;
-      font-family: 'Montserrat', system-ui, sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      background: var(--accent);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.15s;
-    }
-
-    footer {
-      border-top: 1px solid var(--gray-200);
-      padding: 32px 0;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .hero { padding: 48px 0 40px; }
-      h1 { font-size: 28px; }
-      .stats { grid-template-columns: 1fr; }
-      .header-cta { display: none; }
-      .play-circle { width: 64px; height: 64px; }
-    }
+    footer { padding: 40px 0; border-top: 1px solid #eee; font-size: 12px; color: #aaa; }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="container">
-      <a class="logo" href="#">Artisan<span>Prospere</span>.ch</a>
-      <a class="header-cta" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">Réserver mon audit</a>
-    </div>
-  </header>
+<header>
+  <div class="container">
+    <a href="#" class="logo">Artisan<span>Prospere</span>.ch</a>
+  </div>
+</header>
 
+<div class="container">
   <section class="hero">
-    <div class="container">
-      <div class="badge">Suisse romande · Artisans</div>
+    <h1>
+      Comment facturer 1 à 2 clients de plus chaque semaine
+      <em>de manière régulière, prévisible et sans prospecter</em>
+    </h1>
 
-      <h1>
-        Comment facturer<br>
-        1 à 2 clients de plus<br>
-        chaque semaine grâce à ton site<br>
-        <em style="font-size:0.65em;">de manière régulière, prévisible et sans prospecter</em>
-      </h1>
-
-      <p class="hero-sub">Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.</p>
+    <div class="video-container">
+      <div id="audioAlert">⚠️ LA VIDÉO A DÉMARRÉ : CLIQUEZ DESSUS POUR ACTIVER LE SON 🔈</div>
 
       <div class="video-wrap">
-        <div id="videoOverlay" onclick="startVideo()">
-          <div id="videoOverlayInner">
-            <div class="play-circle">
-              <svg width="30" height="30" viewBox="0 0 24 24">
-                <polygon points="7,4 21,12 7,20" fill="white"/>
-              </svg>
-            </div>
-            <span class="play-label">Lancer la vidéo</span>
-            <span class="play-sub">🔈 Puis cliquez sur la vidéo pour le son</span>
+        <div id="videoOverlay" onclick="handleStart()">
+          <div class="play-btn">
+            <svg width="35" height="35" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
           </div>
+          <span class="play-text">CLIQUEZ POUR LANCER</span>
         </div>
 
-        <div id="videoPlayer">
-          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;height:100%;">
-            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
-              <iframe id="wistiaFrame" src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true" title="VSL ArtisanProspere" allow="autoplay; fullscreen" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe>
-            </div>
-          </div>
+        <div id="videoPlayer" style="position:absolute; inset:0;">
+          <iframe id="wistiaFrame" src="https://fast.wistia.net/embed/iframe/j4hsy8feq9" allow="autoplay; fullscreen" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
         </div>
       </div>
+    </div>
 
-      <a class="btn-primary" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Réserver mon audit gratuit</a>
-      <p class="cta-note">30 minutes · Gratuit · Sans engagement</p>
+    <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="btn-primary">→ RÉSERVER MON AUDIT GRATUIT</a>
 
-      <hr class="divider">
-
-      <div class="stats">
-        <div class="stat"><span class="stat-num">7j</span><span class="stat-label">Délai de livraison</span></div>
-        <div class="stat"><span class="stat-num">9/10</span><span class="stat-label">Échec des sites artisans</span></div>
-        <div class="stat"><span class="stat-num">0 CHF</span><span class="stat-label">Coût de l'audit</span></div>
-      </div>
-
-      <ul class="points">
-        <li><span class="check">✓</span><span><strong>Site optimisé conversion</strong> — livré clé en main</span></li>
-        <li><span class="check">✓</span><span><strong>Formulaire de devis intelligent</strong> — fini les appels inutiles</span></li>
-        <li><span class="check">✓</span><span><strong>Fiche Google optimisée</strong> — pour dominer ta région</span></li>
-      </ul>
-
-      <div class="booking-section">
-        <p class="section-title">Audit gratuit (30 min)</p>
-        <p class="section-sub">On analyse ton site et tes opportunités ensemble.</p>
-        <a class="btn-calendly" href="https://calendly.com/artisanpro/artisanprospere" target="_blank">→ Choisir mon créneau</a>
-      </div>
+    <div class="stats">
+      <div class="stat"><span class="stat-num">7j</span><span class="stat-label">Livraison</span></div>
+      <div class="stat"><span class="stat-num">9/10</span><span class="stat-label">Sites inefficaces</span></div>
+      <div class="stat"><span class="stat-num">0 CHF</span><span class="stat-label">Prix Audit</span></div>
     </div>
   </section>
+</div>
 
-  <footer>
-    <div class="container">
-      <p class="footer-logo">Artisan<span>Prospere</span>.ch</p>
-      <p>Expertise web pour les artisans romands</p>
-    </div>
-  </footer>
+<footer>
+  <div class="container">© ArtisanProspere.ch — 2026</div>
+</footer>
 
-  <script>
-    function startVideo() {
-      const overlay = document.getElementById('videoOverlay');
-      overlay.style.opacity = '0';
-      setTimeout(() => { overlay.remove(); }, 300);
-
-      const iframe = document.getElementById('wistiaFrame');
-      // On ajoute autoplay=1 à l'URL existante
-      iframe.src = iframe.src + "&autoplay=1";
-    }
-  </script>
+<script>
+  function handleStart() {
+    // 1. On cache l'image de couverture
+    document.getElementById('videoOverlay').style.display = 'none';
+    
+    // 2. On affiche l'alerte jaune flashy pour le son
+    document.getElementById('audioAlert').style.display = 'block';
+    
+    // 3. On lance la vidéo
+    var iframe = document.getElementById('wistiaFrame');
+    iframe.src += "?autoplay=1";
+    
+    // 4. Optionnel : On fait défiler un peu pour que l'alerte soit bien centrée
+    window.scrollTo({ top: 150, behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
