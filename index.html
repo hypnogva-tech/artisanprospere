@@ -155,15 +155,26 @@
       text-align: center;
     }
 
+    /* --- NOUVEAU CSS VIDEO --- */
     .video-wrap {
       margin-bottom: 32px;
       position: relative;
-      padding-top: 56.25%;
+      padding-top: 56.25%; /* Ratio 16:9 */
       border-radius: var(--radius);
       overflow: hidden;
-      background: #111;
+      background: #111; /* Fond noir pendant le chargement */
     }
 
+    /* L'iframe est masqué par défaut */
+    #videoPlayer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* L'overlay est visible par défaut et au-dessus */
     #videoOverlay {
       position: absolute;
       inset: 0;
@@ -172,6 +183,17 @@
       background-size: cover;
       background-position: center;
       z-index: 2;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* États quand la vidéo est prête (gérés par JS) */
+    .video-loaded #videoPlayer {
+      opacity: 1;
+    }
+    .video-loaded #videoOverlay {
+      opacity: 0;
+      pointer-events: none; /* Désactive le clic sur l'overlay caché */
     }
 
     #videoOverlayInner {
@@ -211,12 +233,6 @@
       color: rgba(255,255,255,0.7);
       font-size: 12px;
       margin-top: -4px;
-    }
-
-    #videoPlayer {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
     }
 
     #videoPlayer iframe {
@@ -512,11 +528,9 @@
         Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
       </p>
 
-      <!-- VIDEO -->
+      <div class="video-wrap" id="videoContainer">
 
-      <div class="video-wrap">
-
-        <div id="videoOverlay" onclick="startVideo()">
+        <div id="videoOverlay">
 
           <div id="videoOverlayInner">
 
@@ -550,7 +564,7 @@
 
               <iframe
                 id="wistiaFrame"
-                src="https://fast.wistia.net/embed/iframe/j4hsy8feq9web_component=true&seo=true"
+                src="https://fast.wistia.net/embed/iframe/j4hsy8feq9?web_component=true&seo=true"
                 title="VSL ArtisanProspere"
                 allow="autoplay; fullscreen"
                 allowtransparency="true"
@@ -638,7 +652,7 @@
           </span>
         </li>
 
-      </ul>
+        </ul>
 
       <hr class="divider">
 
@@ -700,28 +714,28 @@
 
     </div>
 
-  </footer>
+  </footer >
 
   <script>
-
-   <script>
-  function startVideo() {
-    // 1. On récupère l'instance de la vidéo Wistia
+    // Initialisation de la file d'attente Wistia
     window._wq = window._wq || [];
-    
-    // On cible le "hashed ID" de ta vidéo (j4hsy8feq9)
+
+    // On cible le 'hashed ID' de ta vidéo (j4hsy8feq9)
     _wq.push({ id: "j4hsy8feq9", onReady: function(video) {
       
-      // 2. On retire l'overlay
-      const overlay = document.getElementById('videoOverlay');
-      if (overlay) overlay.remove();
+      console.log("Wistia est prêt, liaison du clic...");
       
-      // 3. On force le son et la lecture
-      video.unmute();
-      video.play();
-    }});
-  }
-</script>
+      const container = document.getElementById('videoContainer');
+      const overlay = document.getElementById('videoOverlay');
 
-</body>
-</html>
+      // Dès que Wistia est prêt, on autorise le clic sur l'overlay
+      overlay.addEventListener('click', function() {
+        
+        console.log("Clic détecté, activation...");
+
+        // 1. On applique la classe CSS qui masque l'overlay et montre l'iframe
+        container.classList.add('video-loaded');
+        
+        // 2. On force l'activation du son et la lecture
+        video.unmute();
+        video.
