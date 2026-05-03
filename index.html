@@ -3,18 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
 
-  <meta name="description" content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.">
+  <meta
+    name="description"
+    content="Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+    media="print"
+    onload="this.media='all'"
+  >
+
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+    >
+  </noscript>
 
   <script src="https://fast.wistia.net/player.js" async></script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --black: #0e0e0e;
@@ -28,10 +50,15 @@
       --success: #1a7a4a;
       --success-light: #e8f5ee;
       --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', system-ui, sans-serif;
       background: var(--white);
       color: var(--black);
       font-size: 17px;
@@ -39,65 +66,126 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-    header { padding: 20px 0; border-bottom: 1px solid var(--gray-200); }
-    header .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 800; font-size: 18px; color: var(--black); text-decoration: none; }
-    .logo span { color: var(--accent); }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
 
     .header-cta {
-      font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none;
-      border: 1.5px solid var(--accent); padding: 8px 18px; border-radius: 999px;
-      transition: all 0.2s;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1.5px solid var(--accent);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
     }
-    .header-cta:hover { background: var(--accent); color: var(--white); }
 
-    .hero { padding: 60px 0; text-align: center; }
+    .header-cta:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
     .badge {
-      display: inline-block; font-size: 12px; font-weight: 500; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-light); padding: 6px 16px;
-      border-radius: 999px; margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
     }
 
-    h1 { font-weight: 800; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin-bottom: 24px; }
-    h1 em { font-style: normal; color: var(--accent); display: block; font-size: 0.65em; margin-top: 10px; }
+    h1 {
+      font-weight: 800;
+      font-size: clamp(30px, 5.5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--black);
+      text-align: center;
+    }
 
-    .hero-sub { color: var(--gray-600); margin-bottom: 32px; font-weight: 300; }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
 
-    /* --- VIDEO STYLES --- */
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--gray-600);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+      text-align: center;
+    }
+
     .video-wrap {
       margin-bottom: 32px;
       position: relative;
       padding-top: 56.25%;
       border-radius: var(--radius);
       overflow: hidden;
-      background: #000;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      background: #111;
     }
 
     #videoOverlay {
       position: absolute;
       inset: 0;
-      z-index: 10;
       cursor: pointer;
-      background: url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.4s;
+      background-image: url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
     }
 
-    #videoOverlay::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.2);
+    #videoOverlayInner {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .play-circle {
-      position: relative;
       width: 72px;
       height: 72px;
       background: var(--accent);
@@ -105,130 +193,528 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 12px;
-      box-shadow: 0 8px 24px rgba(200,66,26,0.4);
+      box-shadow: 0 8px 32px rgba(200,66,26,0.5);
       transition: transform 0.2s;
     }
 
-    #videoOverlay:hover .play-circle { transform: scale(1.1); }
+    #videoOverlay:hover .play-circle {
+      transform: scale(1.08);
+    }
 
-    .play-label { position: relative; color: white; font-weight: 700; font-size: 16px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    .play-sub { position: relative; color: rgba(255,255,255,0.9); font-size: 12px; }
+    .play-label {
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-    .wistia_embed { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; }
+    .play-sub {
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      margin-top: -4px;
+    }
 
-    /* --- CTA & STATS --- */
+    #videoPlayer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    #videoPlayer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
     .btn-primary {
-      display: block; background: var(--black); color: white; padding: 20px;
-      border-radius: var(--radius); font-weight: 700; text-decoration: none;
-      transition: 0.2s; margin-bottom: 12px;
+      display: block;
+      width: 100%;
+      padding: 20px 32px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 12px;
     }
-    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
 
-    .cta-note { font-size: 13px; color: var(--gray-400); margin-bottom: 40px; }
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
 
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
-    .stat { background: var(--gray-100); padding: 15px; border-radius: 8px; }
-    .stat-num { display: block; font-weight: 800; font-size: 20px; color: var(--accent); }
-    .stat-label { font-size: 11px; color: var(--gray-600); font-weight: 500; }
+    .cta-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 48px;
+    }
 
-    .points { list-style: none; text-align: left; margin-bottom: 40px; }
-    .points li { display: flex; gap: 12px; margin-bottom: 12px; font-size: 15px; }
-    .check { color: var(--success); font-weight: bold; }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 0 0 48px;
+    }
 
-    .booking-section { background: var(--gray-100); padding: 40px 20px; border-radius: var(--radius); margin-bottom: 60px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .stat {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--black);
+      display: block;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+
+    .points {
+      list-style: none;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--gray-600);
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--success-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .points li strong {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .booking-section {
+      margin-bottom: 64px;
+      text-align: center;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      font-weight: 300;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .booking-features {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .booking-feature {
+      font-size: 13px;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .booking-feature::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+    }
+
     .btn-calendly {
-      display: inline-block; background: var(--accent); color: white; padding: 18px 30px;
-      border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 20px;
+      display: inline-block;
+      padding: 20px 48px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--accent);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
     }
 
-    footer { padding: 40px 0; border-top: 1px solid var(--gray-200); color: var(--gray-400); font-size: 12px; }
+    .btn-calendly:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
 
     @media (max-width: 600px) {
-      .header-cta { display: none; }
-      .stats { grid-template-columns: 1fr; }
+
+      .hero {
+        padding: 48px 0 40px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 14px 10px;
+      }
+
+      .stat-num {
+        font-size: 20px;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .btn-primary {
+        font-size: 16px;
+        padding: 18px 24px;
+      }
+
+      .booking-section {
+        padding: 32px 20px;
+      }
+
+      .btn-calendly {
+        padding: 18px 32px;
+        font-size: 15px;
+      }
+
+      .play-circle {
+        width: 58px;
+        height: 58px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <a href="#" class="logo">Artisan<span>Prospere</span>.ch</a>
-    <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="header-cta">Réserver mon audit</a>
-  </div>
-</header>
+  <header>
 
-<div class="container">
+    <div class="container">
+
+      <a class="logo" href="#">
+        Artisan<span>Prospere</span>.ch
+      </a>
+
+      <a
+        class="header-cta"
+        href="https://calendly.com/artisanpro/artisanprospere"
+        target="_blank"
+      >
+        Réserver mon audit
+      </a>
+
+    </div>
+
+  </header>
+
   <section class="hero">
-    <div class="badge">Suisse romande · Artisans</div>
-    <h1>
-      Comment facturer 1 à 2 clients de plus chaque semaine grâce à ton site
-      <em>de manière régulière, prévisible et sans prospecter</em>
-    </h1>
-    <p class="hero-sub">Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.</p>
 
-    <div class="video-wrap">
-      <div id="videoOverlay" onclick="playWistiaVideo()">
-        <div class="play-circle">
-          <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="7,4 21,12 7,20" fill="white"/></svg>
-        </div>
-        <span class="play-label">Regarder la vidéo</span>
-        <span class="play-sub">7 minutes • Active le son</span>
+    <div class="container">
+
+      <div class="badge">
+        Suisse romande · Artisans
       </div>
 
-      <div class="wistia_embed wistia_async_j4hsy8feq9 videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+      <h1>
+        Comment facturer<br>
+        1 à 2 clients de plus<br>
+        chaque semaine grâce à ton site<br>
+        <em style="font-size:0.65em;">
+          de manière régulière, prévisible<br>
+          et sans prospecter
+        </em>
+      </h1>
+
+      <p class="hero-sub">
+        Pour les artisans en Suisse romande qui veulent facturer de nouveaux clients sans dépendre du bouche-à-oreille.
+      </p>
+
+      <!-- VIDEO -->
+
+      <div class="video-wrap">
+
+        <div id="videoOverlay" onclick="startVideo()">
+
+          <div id="videoOverlayInner">
+
+            <div class="play-circle">
+
+              <svg width="26" height="26" viewBox="0 0 24 24">
+                <polygon points="7,4 21,12 7,20" fill="white"/>
+              </svg>
+
+            </div>
+
+            <span class="play-label">
+              ▶ Regarder la vidéo
+            </span>
+
+            <span class="play-sub">
+              7 minutes · Active le son
+            </span>
+
+          </div>
+
+        </div>
+
+        <div id="videoPlayer">
+
+          <div class="wistia_responsive_padding"
+               style="padding:56.25% 0 0 0;position:relative;height:100%;">
+
+            <div class="wistia_responsive_wrapper"
+                 style="height:100%;left:0;position:absolute;top:0;width:100%;">
+
+              <iframe
+                id="wistiaFrame"
+                src="https://fast.wistia.net/embed/iframe/gr25cqtnhc?web_component=true&seo=true"
+                title="VSL ArtisanProspere"
+                allow="autoplay; fullscreen"
+                allowtransparency="true"
+                frameborder="0"
+                scrolling="no"
+                class="wistia_embed"
+                name="wistia_embed"
+                width="100%"
+                height="100%">
+              </iframe>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <a
+        class="btn-primary"
+        href="https://calendly.com/artisanpro/artisanprospere"
+        target="_blank"
+      >
+        → Réserver mon audit gratuit
+      </a>
+
+      <p class="cta-note">
+        30 minutes · Gratuit · Sans engagement
+      </p>
+
+      <hr class="divider">
+
+      <div class="stats">
+
+        <div class="stat">
+          <span class="stat-num">7j</span>
+          <span class="stat-label">Délai de livraison</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-num">9/10</span>
+          <span class="stat-label">Sites d'artisans ne convertissent pas</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-num">0 CHF</span>
+          <span class="stat-label">Pour l'audit</span>
+        </div>
+
+      </div>
+
+      <ul class="points">
+
+        <li>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Site optimisé vitesse, mobile et SEO technique</strong>
+            — livré clé en main
+          </span>
+        </li>
+
+        <li>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Formulaire de devis intelligent</strong>
+            — fini les allers-retours
+          </span>
+        </li>
+
+        <li>
+          <span class="check">
+            ✓
+          </span>
+
+          <span>
+            <strong>Fiche Google optimisée</strong>
+            — pour exister localement
+          </span>
+        </li>
+
+      </ul>
+
+      <hr class="divider">
+
+      <div class="booking-section">
+
+        <p class="section-title">
+          Réserve ton audit gratuit
+        </p>
+
+        <p class="section-sub">
+          30 minutes pour analyser ton site ensemble.
+        </p>
+
+        <div class="booking-features">
+
+          <span class="booking-feature">
+            Gratuit
+          </span>
+
+          <span class="booking-feature">
+            Sans engagement
+          </span>
+
+          <span class="booking-feature">
+            En visio
+          </span>
+
+          <span class="booking-feature">
+            30 minutes
+          </span>
+
+        </div>
+
+        <a
+          class="btn-calendly"
+          href="https://calendly.com/artisanpro/artisanprospere"
+          target="_blank"
+        >
+          → Choisir mon créneau
+        </a>
+
+      </div>
+
     </div>
 
-    <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="btn-primary">→ Réserver mon audit gratuit</a>
-    <p class="cta-note">30 minutes • Gratuit • Sans engagement</p>
-
-    <div class="stats">
-      <div class="stat"><span class="stat-num">7j</span><span class="stat-label">Livraison</span></div>
-      <div class="stat"><span class="stat-num">9/10</span><span class="stat-label">Échecs web</span></div>
-      <div class="stat"><span class="stat-num">0 CHF</span><span class="stat-label">Coût Audit</span></div>
-    </div>
-
-    <ul class="points">
-      <li><span class="check">✓</span> <span><strong>Site optimisé</strong> vitesse et SEO local — livré clé en main.</span></li>
-      <li><span class="check">✓</span> <span><strong>Formulaire intelligent</strong> — fini les allers-retours inutiles.</span></li>
-      <li><span class="check">✓</span> <span><strong>Fiche Google Business</strong> — pour dominer ta région.</span></li>
-    </ul>
-
-    <div class="booking-section">
-      <h3>Réserve ton audit gratuit</h3>
-      <p style="font-size: 14px; color: var(--gray-600);">30 minutes pour analyser ton activité ensemble.</p>
-      <a href="https://calendly.com/artisanpro/artisanprospere" target="_blank" class="btn-calendly">Choisir mon créneau</a>
-    </div>
   </section>
-</div>
 
-<footer>
-  <div class="container">
-    <p>© ArtisanProspere.ch — Création de sites pour artisans en Suisse romande</p>
-  </div>
-</footer>
+  <footer>
 
-<script>
-  // Initialisation de la file d'attente Wistia
-  window._wq = window._wq || [];
+    <div class="container">
 
-  function playWistiaVideo() {
-    // On cible la vidéo avec son ID (j4hsy8feq9)
-    _wq.push({ id: "j4hsy8feq9", onReady: function(video) {
-      // 1. On cache l'overlay proprement
-      const overlay = document.getElementById('videoOverlay');
-      overlay.style.opacity = '0';
-      setTimeout(() => { overlay.style.display = 'none'; }, 400);
+      <p class="footer-logo">
+        Artisan<span>Prospere</span>.ch
+      </p>
 
-      // 2. On active le son et on lance la lecture
-      // C'est cette action de clic utilisateur qui débloque le son sur les navigateurs
-      video.unmute();
-      video.play();
-    }});
-  }
-</script>
+      <p>
+        Création de sites pour artisans en Suisse romande
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    function startVideo() {
+
+      document.getElementById('videoOverlay').remove();
+
+      const iframe = document.getElementById('wistiaFrame');
+
+      iframe.src =
+        'https://fast.wistia.net/embed/iframe/gr25cqtnhc?autoplay=1&web_component=true&seo=true';
+    }
+
+  </script>
 
 </body>
 </html>
