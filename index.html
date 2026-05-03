@@ -704,17 +704,24 @@
 
   <script>
 
-    function startVideo() {
-
-      document.getElementById('videoOverlay').remove();
-
-      const iframe = document.getElementById('wistiaFrame');
-
-      iframe.src =
-        'https://fast.wistia.net/embed/iframe/j4hsy8feq9?autoplay=1&web_component=true&seo=true';
-    }
-
-  </script>
+   <script>
+  function startVideo() {
+    // 1. On récupère l'instance de la vidéo Wistia
+    window._wq = window._wq || [];
+    
+    // On cible le "hashed ID" de ta vidéo (j4hsy8feq9)
+    _wq.push({ id: "j4hsy8feq9", onReady: function(video) {
+      
+      // 2. On retire l'overlay
+      const overlay = document.getElementById('videoOverlay');
+      if (overlay) overlay.remove();
+      
+      // 3. On force le son et la lecture
+      video.unmute();
+      video.play();
+    }});
+  }
+</script>
 
 </body>
 </html>
