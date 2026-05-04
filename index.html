@@ -4,86 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtisanProspere.ch — Comment facturer 1 à 2 clients de plus chaque semaine</title>
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1496766415024234'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1496766415024234&ev=PageView&noscript=1"
+  /></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --black: #0e0e0e; --white: #fafaf8; --gray-100: #f4f3f0;
       --gray-600: #6b6760; --accent: #c8421a; --radius: 12px;
     }
-    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-    
     header { padding: 20px 0; border-bottom: 1px solid #e8e6e1; }
     .logo { font-weight: 800; font-size: 18px; text-decoration: none; color: var(--black); }
     .logo span { color: var(--accent); }
-
     .hero { padding: 60px 0; text-align: center; }
-    h1 { font-weight: 800; font-size: clamp(26px, 5vw, 42px); line-height: 1.1; margin-bottom: 24px; }
-    h1 em { font-style: normal; color: var(--accent); display: block; font-size: 0.6em; margin-top: 8px; }
-
-    /* --- VIDEO SECTION --- */
+    h1 { font-weight: 800; font-size: clamp(26px, 5vw, 42px); line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
+    h1 em { font-style: normal; color: var(--accent); display: block; font-size: 0.6em; margin-top: 8px; text-transform: none; }
     .video-container { margin-bottom: 40px; position: relative; }
     .video-wrap {
       position: relative; padding-top: 56.25%; border-radius: var(--radius);
       overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
     }
-
     #audioAlert {
       display: none; background: #ffeb3b; color: #000; padding: 12px;
       font-weight: 700; font-size: 14px; border-radius: 8px; margin-bottom: 15px;
       border: 2px solid #fbc02d; animation: pulse-yellow 1.5s infinite;
     }
-
-    @keyframes pulse-yellow {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-
+    @keyframes pulse-yellow { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
     #videoOverlay {
       position: absolute; inset: 0; z-index: 10; cursor: pointer;
       background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://embed-ssl.wistia.com/deliveries/66fb8bb8163e5111da36dd834928e100.png') center/cover;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
     }
-
     .play-btn {
       width: 90px; height: 90px; background: var(--accent); border-radius: 50%;
       display: flex; align-items: center; justify-content: center; position: relative;
     }
-
     .play-btn::after {
       content: ""; position: absolute; width: 100%; height: 100%;
       background: var(--accent); border-radius: 50%; z-index: -1;
       animation: ripple 1.5s infinite;
     }
-
-    @keyframes ripple {
-      0% { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.8); opacity: 0; }
-    }
-
+    @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
     .play-text { color: white; font-weight: 800; font-size: 18px; margin-top: 20px; text-transform: uppercase; }
-
     .btn-primary {
       display: inline-block; background: var(--black); color: white; padding: 20px 40px;
       border-radius: var(--radius); font-weight: 700; text-decoration: none; margin-bottom: 40px;
-      width: 100%; transition: transform 0.2s;
+      width: 100%; transition: transform 0.2s; text-align: center;
     }
-    .btn-primary:hover { transform: scale(1.02); }
-
+    .btn-primary:hover { transform: scale(1.02); background: var(--accent); }
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 40px; }
-    .stat { background: var(--gray-100); padding: 15px; border-radius: 8px; }
+    .stat { background: var(--gray-100); padding: 15px; border-radius: 8px; text-align: center; }
     .stat-num { display: block; font-weight: 800; font-size: 22px; color: var(--accent); }
-    .stat-label { font-size: 11px; color: var(--gray-600); }
-
-    /* FAQ Style */
+    .stat-label { font-size: 11px; color: var(--gray-600); text-transform: uppercase; }
     .faq-item { margin-bottom: 25px; text-align: left; }
     .faq-q { font-weight: 700; font-size: 16px; margin-bottom: 8px; display: block; }
     .faq-a { font-size: 15px; color: var(--gray-600); line-height: 1.5; }
-
     footer a:hover { color: var(--accent) !important; }
   </style>
 </head>
@@ -128,7 +122,7 @@
   </section>
 
   <section style="margin-top: 40px; padding: 60px 0; border-top: 1px solid #eee;">
-    <h2 style="font-weight: 800; font-size: 28px; margin-bottom: 40px; text-align: center;">Questions fréquentes</h2>
+    <h2 style="font-weight: 800; font-size: 28px; margin-bottom: 40px; text-align: center; text-transform: uppercase;">Questions fréquentes</h2>
     
     <div class="faq-item">
       <span class="faq-q">Est-ce que je vais devoir passer des heures sur l'ordinateur ?</span>
@@ -146,8 +140,8 @@
     </div>
 
     <div class="faq-item">
-      <span class="faq-q">J'ai assez de clients, faire une nouveau site c'est pas ma priorité ?</span>
-      <p class="faq-a">Si tu ne veux pas que ton entreprise grandisse c'est ok, c'est appel n'est pas fait pour toi. Ce appel est fait pour les artisans qui sont ambitieux et qui veulent faire croitre leur activité rapidement.</p>
+      <span class="faq-q">J'ai assez de clients, faire un nouveau site n'est pas ma priorité ?</span>
+      <p class="faq-a">Si vous ne souhaitez pas faire croître votre activité, c'est tout à fait respectable. Cet appel s'adresse aux artisans ambitieux qui veulent structurer leur croissance.</p>
     </div>
   </section>
 
@@ -187,23 +181,14 @@
 
 <script>
   function handleStart() {
-    // 1. Masquer l'image (Overlay)
     var overlay = document.getElementById('videoOverlay');
     if (overlay) overlay.style.display = 'none';
-    
-    // 2. Afficher l'alerte sonore
     var alertBox = document.getElementById('audioAlert');
     if (alertBox) alertBox.style.display = 'block';
-    
-    // 3. Lancer la vidéo Wistia proprement
     var iframe = document.getElementById('wistiaFrame');
     var currentSrc = iframe.src;
-    
-    // On vérifie si l'URL a déjà des paramètres pour mettre ? ou &
     var separator = currentSrc.indexOf('?') !== -1 ? "&" : "?";
     iframe.src = currentSrc + separator + "autoplay=1";
-    
-    // 4. Scroll vers la vidéo pour confort mobile
     window.scrollTo({ top: 120, behavior: 'smooth' });
   }
 </script>
